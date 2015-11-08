@@ -35,7 +35,7 @@
 		659AF1E81BEF1D530031B3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659AF1E61BEF1D530031B3A5 /* Main.storyboard */; };
 		659AF1EA1BEF1D540031B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659AF1E91BEF1D540031B3A5 /* Assets.xcassets */; };
 		659AF1EF1BEF1D640031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Hauth.framework */; };
-		659AF1F01BEF1D690031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Hauth.framework */; };
+		659AF1F31BEF2E2B0031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Hauth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659AF1F01BEF1D690031B3A5 /* Hauth.framework in Frameworks */,
+				659AF1F31BEF2E2B0031B3A5 /* Hauth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +345,11 @@
 					};
 					659AF1C91BEF1D3E0031B3A5 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 99M2UD9XXB;
 					};
 					659AF1DF1BEF1D530031B3A5 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 99M2UD9XXB;
 					};
 				};
 			};
@@ -681,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Hauth iOS App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Hauth-iOS-App";
@@ -693,6 +696,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = "Hauth iOS App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Hauth-iOS-App";
@@ -705,6 +709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Hauth tvOS App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Hauth-tvOS-App";
@@ -721,6 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Hauth tvOS App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Hauth-tvOS-App";
@@ -777,6 +783,7 @@
 				659AF1DA1BEF1D3E0031B3A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		659AF1EC1BEF1D540031B3A5 /* Build configuration list for PBXNativeTarget "Hauth tvOS App" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +792,7 @@
 				659AF1EE1BEF1D540031B3A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
