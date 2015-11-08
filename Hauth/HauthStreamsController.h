@@ -20,6 +20,6 @@
 - (void)sendData:(nonnull NSData *)data;
 - (void)handleReceivedData:(nonnull NSData *)data;
 
-- (void)handleStreamEnd:(NSStream *)stream;
+- (void)handleStreamEnd:(nonnull NSStream *)stream;
 
 @end
