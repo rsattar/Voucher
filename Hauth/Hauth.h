@@ -15,6 +15,7 @@ FOUNDATION_EXPORT double HauthVersionNumber;
 FOUNDATION_EXPORT const unsigned char HauthVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Hauth/PublicHeader.h>
+#import <Hauth/HauthStreamsController.h>
 #import <Hauth/HauthClient.h>
 #import <Hauth/HauthServer.h>
 
