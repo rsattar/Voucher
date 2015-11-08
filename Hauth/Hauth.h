@@ -6,7 +6,7 @@
 //  Copyright © 2015 Rizwan Sattar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Hauth.
 FOUNDATION_EXPORT double HauthVersionNumber;
