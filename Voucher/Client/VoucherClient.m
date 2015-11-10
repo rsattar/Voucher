@@ -71,10 +71,6 @@
 
 - (void)stopSearching
 {
-    if (!self.isSearching) {
-        return;
-    }
-
     [self.currentlyAvailableServices removeAllObjects];
 
     [self.browser stop];
