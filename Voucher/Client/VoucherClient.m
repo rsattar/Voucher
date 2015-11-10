@@ -138,6 +138,7 @@
     if (self.completionHandler) {
         self.completionHandler(tokenData, responderDisplayName, nil);
     }
+    [self stop];
 }
 
 #pragma mark - NSNetServiceBrowserDelegate
