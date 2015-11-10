@@ -85,6 +85,14 @@
 
 #pragma mark - Services
 
+- (void)connectToAvailableServer
+{
+    if (self.isConnectedToServer && self.currentlyAvailableServices.count > 0) {
+        NSNetService *service = self.currentlyAvailableServices[0];
+        [self connectToServer:service];
+    }
+}
+
 - (void)connectToServer:(NSNetService *)service
 {
     NSAssert(self.currentlyAvailableServices.count > 0,
@@ -183,10 +191,7 @@
     if (![self.currentlyAvailableServices containsObject:service]) {
         [self.currentlyAvailableServices addObject:service];
     }
-    if (!self.server && self.currentlyAvailableServices.count > 0) {
-        NSNetService *service = self.currentlyAvailableServices[0];
-        [self connectToServer:service];
-    }
+    [self connectToAvailableServer];
 }
 
 /* Sent to the NSNetServiceBrowser instance's delegate when a previously discovered domain is no longer available.
@@ -203,6 +208,14 @@
     NSLog(@"Browser removed service: %@, more coming: %@", service.name, (moreComing ? @"YES" : @"NO"));
     if ([self.currentlyAvailableServices containsObject:service]) {
         [self.currentlyAvailableServices removeObject:service];
+    }
+    if (!moreComing) {
+        // No more to remove, now check if our server is one of them, and if so, disconnect, and go back to searching
+        if (self.server && ![self.currentlyAvailableServices containsObject:self.server]) {
+            [self disconnectFromServer];
+            // Connect to next server, if one is available
+            [self connectToAvailableServer];
+        }
     }
 }
 
