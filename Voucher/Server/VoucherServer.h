@@ -14,7 +14,7 @@
 
 @optional
 - (void)voucherServer:(nonnull VoucherServer *)server didUpdateAdvertising:(BOOL)isAdvertising;
-
+- (void)voucherServer:(nonnull VoucherServer *)server didUpdateConnectionToClient:(BOOL)isConnectedToClient;
 @end
 
 
@@ -28,11 +28,12 @@ typedef void (^VoucherServerRequestHandler)(NSString * _Nonnull displayName, Vou
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
 @property (readonly, copy, nonatomic, nonnull) NSString *appId;
 @property (readonly, assign, nonatomic) BOOL isAdvertising;
+@property (readonly, assign, nonatomic) BOOL isConnectedToClient;
 
 - (nullable instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName appId:(nonnull NSString *)appId NS_DESIGNATED_INITIALIZER;
 
 - (void)startAdvertisingWithRequestHandler:(nonnull VoucherServerRequestHandler)requestHandler;
-- (void)stopAdvertising;
+- (void)stop;
 
 @end

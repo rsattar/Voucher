@@ -15,6 +15,7 @@
 @property (copy, nonatomic) NSString *appId;
 @property (assign, nonatomic) BOOL isAdvertising;
 @property (assign, nonatomic) BOOL shouldBeAdvertising;
+@property (assign, nonatomic) BOOL isConnectedToClient;
 
 // Advertising
 @property (copy, nonatomic) VoucherServerRequestHandler requestHandler;
@@ -39,7 +40,7 @@
 
 - (void)dealloc
 {
-    [self stopAdvertising];
+    [self stop];
 }
 
 - (void)startAdvertisingWithRequestHandler:(VoucherServerRequestHandler)requestHandler
@@ -60,6 +61,12 @@
 
 }
 
+- (void)stop
+{
+    [self stopAdvertising];
+    self.requestHandler = nil;
+}
+
 - (void)stopAdvertising
 {
     self.shouldBeAdvertising = NO;
@@ -69,8 +76,19 @@
     self.server.delegate = nil;
     self.server = nil;
     self.registeredServerName = nil;
+    self.isAdvertising = NO;
+}
 
-    self.requestHandler = nil;
+- (void)closeStreams
+{
+    [super closeStreams];
+    self.isConnectedToClient = NO;
+}
+
+- (void)openStreams
+{
+    [super openStreams];
+    self.isConnectedToClient = YES;
 }
 
 
@@ -204,6 +222,17 @@
     _isAdvertising = isAdvertising;
     if ([self.delegate respondsToSelector:@selector(voucherServer:didUpdateAdvertising:)]) {
         [self.delegate voucherServer:self didUpdateAdvertising:_isAdvertising];
+    }
+}
+
+- (void)setIsConnectedToClient:(BOOL)isConnectedToClient
+{
+    if (_isConnectedToClient == isConnectedToClient) {
+        return;
+    }
+    _isConnectedToClient = isConnectedToClient;
+    if ([self.delegate respondsToSelector:@selector(voucherServer:didUpdateConnectionToClient:)]) {
+        [self.delegate voucherServer:self didUpdateConnectionToClient:_isConnectedToClient];
     }
 }
 @end

@@ -17,7 +17,7 @@ class ViewController: UIViewController, VoucherServerDelegate {
     @IBOutlet var connectionStatusLabel: UILabel!
 
     deinit {
-        self.server?.stopAdvertising()
+        self.server?.stop()
         self.server?.delegate = nil
         self.server = nil
     }
@@ -58,7 +58,7 @@ class ViewController: UIViewController, VoucherServerDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
-        self.server?.stopAdvertising()
+        self.server?.stop()
     }
 
     // MARK: - VoucherServerDelegate
@@ -69,6 +69,15 @@ class ViewController: UIViewController, VoucherServerDelegate {
             text = "✅ Server Online."
         }
         self.serverStatusLabel.text = text
+        self.connectionStatusLabel.hidden = !isAdvertising
+    }
+
+    func voucherServer(server: VoucherServer, didUpdateConnectionToClient isConnectedToClient: Bool) {
+        var text = "📡 Waiting for Connection..."
+        if (isConnectedToClient) {
+            text = "✅ Connected."
+        }
+        self.connectionStatusLabel.text = text
     }
 
 }
