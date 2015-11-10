@@ -1,0 +1,839 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		653F0C3E1BF18CE900ED30D0 /* VoucherClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C341BF18CE900ED30D0 /* VoucherClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C3F1BF18CE900ED30D0 /* VoucherClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C341BF18CE900ED30D0 /* VoucherClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C401BF18CE900ED30D0 /* VoucherClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C351BF18CE900ED30D0 /* VoucherClient.m */; };
+		653F0C411BF18CE900ED30D0 /* VoucherClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C351BF18CE900ED30D0 /* VoucherClient.m */; };
+		653F0C441BF18CE900ED30D0 /* VoucherServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C381BF18CE900ED30D0 /* VoucherServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C451BF18CE900ED30D0 /* VoucherServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C381BF18CE900ED30D0 /* VoucherServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C461BF18CE900ED30D0 /* VoucherServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C391BF18CE900ED30D0 /* VoucherServer.m */; };
+		653F0C471BF18CE900ED30D0 /* VoucherServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C391BF18CE900ED30D0 /* VoucherServer.m */; };
+		653F0C481BF18CE900ED30D0 /* Voucher.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C3A1BF18CE900ED30D0 /* Voucher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C491BF18CE900ED30D0 /* Voucher.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C3A1BF18CE900ED30D0 /* Voucher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C4A1BF18CE900ED30D0 /* VoucherCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C3B1BF18CE900ED30D0 /* VoucherCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C4B1BF18CE900ED30D0 /* VoucherCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C3B1BF18CE900ED30D0 /* VoucherCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C4C1BF18CE900ED30D0 /* VoucherStreamsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C3C1BF18CE900ED30D0 /* VoucherStreamsController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C4D1BF18CE900ED30D0 /* VoucherStreamsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F0C3C1BF18CE900ED30D0 /* VoucherStreamsController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653F0C4E1BF18CE900ED30D0 /* VoucherStreamsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C3D1BF18CE900ED30D0 /* VoucherStreamsController.m */; };
+		653F0C4F1BF18CE900ED30D0 /* VoucherStreamsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C3D1BF18CE900ED30D0 /* VoucherStreamsController.m */; };
+		653F0C661BF18DB900ED30D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C531BF18D7B00ED30D0 /* LaunchScreen.storyboard */; };
+		653F0C671BF18DBC00ED30D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C521BF18D7B00ED30D0 /* Assets.xcassets */; };
+		653F0C681BF18DC000ED30D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C551BF18D7B00ED30D0 /* Main.storyboard */; };
+		653F0C691BF18DC300ED30D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C581BF18D7B00ED30D0 /* ViewController.swift */; };
+		653F0C6A1BF18DC600ED30D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C511BF18D7B00ED30D0 /* AppDelegate.swift */; };
+		653F0C721BF18E3900ED30D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C6C1BF18E3900ED30D0 /* AppDelegate.swift */; };
+		653F0C731BF18E3900ED30D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C6D1BF18E3900ED30D0 /* Assets.xcassets */; };
+		653F0C741BF18E3900ED30D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C6E1BF18E3900ED30D0 /* Main.storyboard */; };
+		653F0C761BF18E3900ED30D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C711BF18E3900ED30D0 /* ViewController.swift */; };
+		653F0C7A1BF18EB400ED30D0 /* VoucherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C781BF18EB400ED30D0 /* VoucherTests.m */; };
+		653F0C7E1BF1A22F00ED30D0 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
+		655E318B1BF043D7007370E9 /* Voucher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		659AF17F1BEEF1510031B3A5 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
+		659AF2061BEF38C00031B3A5 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		655E318C1BF043D7007370E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 659AF16B1BEEF1510031B3A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 659AF18E1BEEF1A30031B3A5;
+			remoteInfo = "Hauth tvOS";
+		};
+		659AF1801BEEF1510031B3A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 659AF16B1BEEF1510031B3A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 659AF1731BEEF1510031B3A5;
+			remoteInfo = Hauth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		655E318E1BF043D7007370E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				655E318B1BF043D7007370E9 /* Voucher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		653F0C341BF18CE900ED30D0 /* VoucherClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherClient.h; sourceTree = "<group>"; };
+		653F0C351BF18CE900ED30D0 /* VoucherClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherClient.m; sourceTree = "<group>"; };
+		653F0C361BF18CE900ED30D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Voucher/Info.plist; sourceTree = SOURCE_ROOT; };
+		653F0C381BF18CE900ED30D0 /* VoucherServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherServer.h; sourceTree = "<group>"; };
+		653F0C391BF18CE900ED30D0 /* VoucherServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherServer.m; sourceTree = "<group>"; };
+		653F0C3A1BF18CE900ED30D0 /* Voucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Voucher.h; path = Voucher/Voucher.h; sourceTree = SOURCE_ROOT; };
+		653F0C3B1BF18CE900ED30D0 /* VoucherCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherCommon.h; path = Voucher/VoucherCommon.h; sourceTree = SOURCE_ROOT; };
+		653F0C3C1BF18CE900ED30D0 /* VoucherStreamsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoucherStreamsController.h; path = Voucher/VoucherStreamsController.h; sourceTree = SOURCE_ROOT; };
+		653F0C3D1BF18CE900ED30D0 /* VoucherStreamsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoucherStreamsController.m; path = Voucher/VoucherStreamsController.m; sourceTree = SOURCE_ROOT; };
+		653F0C511BF18D7B00ED30D0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		653F0C521BF18D7B00ED30D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		653F0C541BF18D7B00ED30D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		653F0C561BF18D7B00ED30D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		653F0C571BF18D7B00ED30D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653F0C581BF18D7B00ED30D0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		653F0C6C1BF18E3900ED30D0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		653F0C6D1BF18E3900ED30D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		653F0C6F1BF18E3900ED30D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		653F0C701BF18E3900ED30D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653F0C711BF18E3900ED30D0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		653F0C781BF18EB400ED30D0 /* VoucherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherTests.m; sourceTree = "<group>"; };
+		653F0C791BF18EB400ED30D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659AF1741BEEF1510031B3A5 /* Voucher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Voucher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		659AF17E1BEEF1510031B3A5 /* Voucher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Voucher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		659AF1971BEEF1A30031B3A5 /* Voucher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Voucher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		659AF1CA1BEF1D3E0031B3A5 /* Voucher iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voucher iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		659AF1E01BEF1D530031B3A5 /* Voucher tvOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voucher tvOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		659AF1701BEEF1510031B3A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF17B1BEEF1510031B3A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659AF17F1BEEF1510031B3A5 /* Voucher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1901BEEF1A30031B3A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1C71BEF1D3E0031B3A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C7E1BF1A22F00ED30D0 /* Voucher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1DD1BEF1D530031B3A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659AF2061BEF38C00031B3A5 /* Voucher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		653F0C331BF18CE900ED30D0 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				653F0C341BF18CE900ED30D0 /* VoucherClient.h */,
+				653F0C351BF18CE900ED30D0 /* VoucherClient.m */,
+			);
+			name = Client;
+			path = Voucher/Client;
+			sourceTree = SOURCE_ROOT;
+		};
+		653F0C371BF18CE900ED30D0 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				653F0C381BF18CE900ED30D0 /* VoucherServer.h */,
+				653F0C391BF18CE900ED30D0 /* VoucherServer.m */,
+			);
+			name = Server;
+			path = Voucher/Server;
+			sourceTree = SOURCE_ROOT;
+		};
+		653F0C501BF18D7B00ED30D0 /* Voucher iOS App */ = {
+			isa = PBXGroup;
+			children = (
+				653F0C511BF18D7B00ED30D0 /* AppDelegate.swift */,
+				653F0C581BF18D7B00ED30D0 /* ViewController.swift */,
+				653F0C551BF18D7B00ED30D0 /* Main.storyboard */,
+				653F0C521BF18D7B00ED30D0 /* Assets.xcassets */,
+				653F0C531BF18D7B00ED30D0 /* LaunchScreen.storyboard */,
+				653F0C571BF18D7B00ED30D0 /* Info.plist */,
+			);
+			path = "Voucher iOS App";
+			sourceTree = "<group>";
+		};
+		653F0C6B1BF18E3900ED30D0 /* Voucher tvOS App */ = {
+			isa = PBXGroup;
+			children = (
+				653F0C6C1BF18E3900ED30D0 /* AppDelegate.swift */,
+				653F0C6D1BF18E3900ED30D0 /* Assets.xcassets */,
+				653F0C6E1BF18E3900ED30D0 /* Main.storyboard */,
+				653F0C701BF18E3900ED30D0 /* Info.plist */,
+				653F0C711BF18E3900ED30D0 /* ViewController.swift */,
+			);
+			path = "Voucher tvOS App";
+			sourceTree = "<group>";
+		};
+		653F0C771BF18EB400ED30D0 /* VoucherTests */ = {
+			isa = PBXGroup;
+			children = (
+				653F0C781BF18EB400ED30D0 /* VoucherTests.m */,
+				653F0C791BF18EB400ED30D0 /* Info.plist */,
+			);
+			path = VoucherTests;
+			sourceTree = "<group>";
+		};
+		659AF16A1BEEF1510031B3A5 = {
+			isa = PBXGroup;
+			children = (
+				659AF1761BEEF1510031B3A5 /* Voucher */,
+				653F0C771BF18EB400ED30D0 /* VoucherTests */,
+				653F0C501BF18D7B00ED30D0 /* Voucher iOS App */,
+				653F0C6B1BF18E3900ED30D0 /* Voucher tvOS App */,
+				659AF1751BEEF1510031B3A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		659AF1751BEEF1510031B3A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				659AF1741BEEF1510031B3A5 /* Voucher.framework */,
+				659AF17E1BEEF1510031B3A5 /* Voucher.xctest */,
+				659AF1971BEEF1A30031B3A5 /* Voucher.framework */,
+				659AF1CA1BEF1D3E0031B3A5 /* Voucher iOS App.app */,
+				659AF1E01BEF1D530031B3A5 /* Voucher tvOS App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		659AF1761BEEF1510031B3A5 /* Voucher */ = {
+			isa = PBXGroup;
+			children = (
+				653F0C331BF18CE900ED30D0 /* Client */,
+				653F0C371BF18CE900ED30D0 /* Server */,
+				653F0C361BF18CE900ED30D0 /* Info.plist */,
+				653F0C3A1BF18CE900ED30D0 /* Voucher.h */,
+				653F0C3B1BF18CE900ED30D0 /* VoucherCommon.h */,
+				653F0C3C1BF18CE900ED30D0 /* VoucherStreamsController.h */,
+				653F0C3D1BF18CE900ED30D0 /* VoucherStreamsController.m */,
+			);
+			name = Voucher;
+			path = Hauth;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		659AF1711BEEF1510031B3A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C441BF18CE900ED30D0 /* VoucherServer.h in Headers */,
+				653F0C3E1BF18CE900ED30D0 /* VoucherClient.h in Headers */,
+				653F0C4C1BF18CE900ED30D0 /* VoucherStreamsController.h in Headers */,
+				653F0C4A1BF18CE900ED30D0 /* VoucherCommon.h in Headers */,
+				653F0C481BF18CE900ED30D0 /* Voucher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1911BEEF1A30031B3A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C451BF18CE900ED30D0 /* VoucherServer.h in Headers */,
+				653F0C3F1BF18CE900ED30D0 /* VoucherClient.h in Headers */,
+				653F0C4D1BF18CE900ED30D0 /* VoucherStreamsController.h in Headers */,
+				653F0C4B1BF18CE900ED30D0 /* VoucherCommon.h in Headers */,
+				653F0C491BF18CE900ED30D0 /* Voucher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		659AF1731BEEF1510031B3A5 /* Voucher iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659AF1881BEEF1510031B3A5 /* Build configuration list for PBXNativeTarget "Voucher iOS" */;
+			buildPhases = (
+				659AF16F1BEEF1510031B3A5 /* Sources */,
+				659AF1701BEEF1510031B3A5 /* Frameworks */,
+				659AF1711BEEF1510031B3A5 /* Headers */,
+				659AF1721BEEF1510031B3A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Voucher iOS";
+			productName = Hauth;
+			productReference = 659AF1741BEEF1510031B3A5 /* Voucher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		659AF17D1BEEF1510031B3A5 /* VoucherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659AF18B1BEEF1510031B3A5 /* Build configuration list for PBXNativeTarget "VoucherTests" */;
+			buildPhases = (
+				659AF17A1BEEF1510031B3A5 /* Sources */,
+				659AF17B1BEEF1510031B3A5 /* Frameworks */,
+				659AF17C1BEEF1510031B3A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				659AF1811BEEF1510031B3A5 /* PBXTargetDependency */,
+			);
+			name = VoucherTests;
+			productName = HauthTests;
+			productReference = 659AF17E1BEEF1510031B3A5 /* Voucher.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		659AF18E1BEEF1A30031B3A5 /* Voucher tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659AF1941BEEF1A30031B3A5 /* Build configuration list for PBXNativeTarget "Voucher tvOS" */;
+			buildPhases = (
+				659AF18F1BEEF1A30031B3A5 /* Sources */,
+				659AF1901BEEF1A30031B3A5 /* Frameworks */,
+				659AF1911BEEF1A30031B3A5 /* Headers */,
+				659AF1931BEEF1A30031B3A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Voucher tvOS";
+			productName = Hauth;
+			productReference = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		659AF1C91BEF1D3E0031B3A5 /* Voucher iOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659AF1DB1BEF1D3E0031B3A5 /* Build configuration list for PBXNativeTarget "Voucher iOS App" */;
+			buildPhases = (
+				659AF1C61BEF1D3E0031B3A5 /* Sources */,
+				659AF1C71BEF1D3E0031B3A5 /* Frameworks */,
+				659AF1C81BEF1D3E0031B3A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Voucher iOS App";
+			productName = "Hauth iOS App";
+			productReference = 659AF1CA1BEF1D3E0031B3A5 /* Voucher iOS App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		659AF1DF1BEF1D530031B3A5 /* Voucher tvOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659AF1EC1BEF1D540031B3A5 /* Build configuration list for PBXNativeTarget "Voucher tvOS App" */;
+			buildPhases = (
+				659AF1DC1BEF1D530031B3A5 /* Sources */,
+				659AF1DD1BEF1D530031B3A5 /* Frameworks */,
+				659AF1DE1BEF1D530031B3A5 /* Resources */,
+				655E318E1BF043D7007370E9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				655E318D1BF043D7007370E9 /* PBXTargetDependency */,
+			);
+			name = "Voucher tvOS App";
+			productName = "Hauth tvOS App";
+			productReference = 659AF1E01BEF1D530031B3A5 /* Voucher tvOS App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		659AF16B1BEEF1510031B3A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Rizwan Sattar";
+				TargetAttributes = {
+					659AF1731BEEF1510031B3A5 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					659AF17D1BEEF1510031B3A5 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					659AF18E1BEEF1A30031B3A5 = {
+						DevelopmentTeam = 99M2UD9XXB;
+					};
+					659AF1C91BEF1D3E0031B3A5 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 99M2UD9XXB;
+					};
+					659AF1DF1BEF1D530031B3A5 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 99M2UD9XXB;
+					};
+				};
+			};
+			buildConfigurationList = 659AF16E1BEEF1510031B3A5 /* Build configuration list for PBXProject "Voucher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 659AF16A1BEEF1510031B3A5;
+			productRefGroup = 659AF1751BEEF1510031B3A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				659AF1731BEEF1510031B3A5 /* Voucher iOS */,
+				659AF18E1BEEF1A30031B3A5 /* Voucher tvOS */,
+				659AF17D1BEEF1510031B3A5 /* VoucherTests */,
+				659AF1C91BEF1D3E0031B3A5 /* Voucher iOS App */,
+				659AF1DF1BEF1D530031B3A5 /* Voucher tvOS App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		659AF1721BEEF1510031B3A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF17C1BEEF1510031B3A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1931BEEF1A30031B3A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1C81BEF1D3E0031B3A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C671BF18DBC00ED30D0 /* Assets.xcassets in Resources */,
+				653F0C661BF18DB900ED30D0 /* LaunchScreen.storyboard in Resources */,
+				653F0C681BF18DC000ED30D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1DE1BEF1D530031B3A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C731BF18E3900ED30D0 /* Assets.xcassets in Resources */,
+				653F0C741BF18E3900ED30D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		659AF16F1BEEF1510031B3A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C4E1BF18CE900ED30D0 /* VoucherStreamsController.m in Sources */,
+				653F0C401BF18CE900ED30D0 /* VoucherClient.m in Sources */,
+				653F0C461BF18CE900ED30D0 /* VoucherServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF17A1BEEF1510031B3A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C7A1BF18EB400ED30D0 /* VoucherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF18F1BEEF1A30031B3A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C4F1BF18CE900ED30D0 /* VoucherStreamsController.m in Sources */,
+				653F0C411BF18CE900ED30D0 /* VoucherClient.m in Sources */,
+				653F0C471BF18CE900ED30D0 /* VoucherServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1C61BEF1D3E0031B3A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C6A1BF18DC600ED30D0 /* AppDelegate.swift in Sources */,
+				653F0C691BF18DC300ED30D0 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		659AF1DC1BEF1D530031B3A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F0C721BF18E3900ED30D0 /* AppDelegate.swift in Sources */,
+				653F0C761BF18E3900ED30D0 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		655E318D1BF043D7007370E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 659AF18E1BEEF1A30031B3A5 /* Voucher tvOS */;
+			targetProxy = 655E318C1BF043D7007370E9 /* PBXContainerItemProxy */;
+		};
+		659AF1811BEEF1510031B3A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 659AF1731BEEF1510031B3A5 /* Voucher iOS */;
+			targetProxy = 659AF1801BEEF1510031B3A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		653F0C531BF18D7B00ED30D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653F0C541BF18D7B00ED30D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		653F0C551BF18D7B00ED30D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653F0C561BF18D7B00ED30D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		653F0C6E1BF18E3900ED30D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653F0C6F1BF18E3900ED30D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		659AF1861BEEF1510031B3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		659AF1871BEEF1510031B3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		659AF1891BEEF1510031B3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Voucher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizwansattar.Voucher;
+				PRODUCT_NAME = Voucher;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		659AF18A1BEEF1510031B3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Voucher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizwansattar.Voucher;
+				PRODUCT_NAME = Voucher;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		659AF18C1BEEF1510031B3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VoucherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizwansattar.VoucherTests;
+				PRODUCT_NAME = Voucher;
+			};
+			name = Debug;
+		};
+		659AF18D1BEEF1510031B3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VoucherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizwansattar.VoucherTests;
+				PRODUCT_NAME = Voucher;
+			};
+			name = Release;
+		};
+		659AF1951BEEF1A30031B3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Voucher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizwansattar.Voucher;
+				PRODUCT_NAME = Voucher;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		659AF1961BEEF1A30031B3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Voucher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizwansattar.Voucher;
+				PRODUCT_NAME = Voucher;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		659AF1D91BEF1D3E0031B3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Voucher iOS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Voucher-iOS-App";
+				PRODUCT_NAME = "Voucher iOS App";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		659AF1DA1BEF1D3E0031B3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				INFOPLIST_FILE = "Voucher iOS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Voucher-iOS-App";
+				PRODUCT_NAME = "Voucher iOS App";
+			};
+			name = Release;
+		};
+		659AF1ED1BEF1D540031B3A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Voucher tvOS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Voucher-tvOS-App";
+				PRODUCT_NAME = "Voucher tvOS App";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		659AF1EE1BEF1D540031B3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Voucher tvOS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rizwansattar.Voucher-tvOS-App";
+				PRODUCT_NAME = "Voucher tvOS App";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		659AF16E1BEEF1510031B3A5 /* Build configuration list for PBXProject "Voucher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659AF1861BEEF1510031B3A5 /* Debug */,
+				659AF1871BEEF1510031B3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659AF1881BEEF1510031B3A5 /* Build configuration list for PBXNativeTarget "Voucher iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659AF1891BEEF1510031B3A5 /* Debug */,
+				659AF18A1BEEF1510031B3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659AF18B1BEEF1510031B3A5 /* Build configuration list for PBXNativeTarget "VoucherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659AF18C1BEEF1510031B3A5 /* Debug */,
+				659AF18D1BEEF1510031B3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659AF1941BEEF1A30031B3A5 /* Build configuration list for PBXNativeTarget "Voucher tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659AF1951BEEF1A30031B3A5 /* Debug */,
+				659AF1961BEEF1A30031B3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659AF1DB1BEF1D3E0031B3A5 /* Build configuration list for PBXNativeTarget "Voucher iOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659AF1D91BEF1D3E0031B3A5 /* Debug */,
+				659AF1DA1BEF1D3E0031B3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659AF1EC1BEF1D540031B3A5 /* Build configuration list for PBXNativeTarget "Voucher tvOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				659AF1ED1BEF1D540031B3A5 /* Debug */,
+				659AF1EE1BEF1D540031B3A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 659AF16B1BEEF1510031B3A5 /* Project object */;
+}
