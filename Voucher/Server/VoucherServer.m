@@ -97,15 +97,16 @@
 
             NSAssert(error == nil, @"Error handling not yet implemented");
 
-            // App has granted us some data
+            NSDictionary *responseDict = nil;
             if (tokenData.length) {
-                NSDictionary *responseDict = @{@"tokenData" : tokenData, @"displayName" : _weakSelf.displayName};
-                NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:responseDict];
-                [_weakSelf sendData:responseData];
+                // App has granted us some data
+                responseDict = @{@"tokenData" : tokenData, @"displayName" : _weakSelf.displayName};
             } else {
-                // Close the connection
-                [_weakSelf stopAdvertising];
+                // Don't send back any response data, except our display name
+                responseDict = @{@"displayName" : _weakSelf.displayName};
             }
+            NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:responseDict];
+            [_weakSelf sendData:responseData];
 
         });
     }
