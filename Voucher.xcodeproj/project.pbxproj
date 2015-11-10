@@ -33,19 +33,27 @@
 		653F0C741BF18E3900ED30D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C6E1BF18E3900ED30D0 /* Main.storyboard */; };
 		653F0C761BF18E3900ED30D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C711BF18E3900ED30D0 /* ViewController.swift */; };
 		653F0C7A1BF18EB400ED30D0 /* VoucherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C781BF18EB400ED30D0 /* VoucherTests.m */; };
-		653F0C7E1BF1A22F00ED30D0 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
-		655E318B1BF043D7007370E9 /* Voucher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		653F0C841BF1CF1200ED30D0 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
+		653F0C851BF1CF1200ED30D0 /* Voucher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		653F0C891BF1CF2200ED30D0 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; };
+		653F0C8A1BF1CF2200ED30D0 /* Voucher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		659AF17F1BEEF1510031B3A5 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
-		659AF2061BEF38C00031B3A5 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		655E318C1BF043D7007370E9 /* PBXContainerItemProxy */ = {
+		653F0C861BF1CF1300ED30D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 659AF16B1BEEF1510031B3A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 659AF1731BEEF1510031B3A5;
+			remoteInfo = "Voucher iOS";
+		};
+		653F0C8B1BF1CF2200ED30D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 659AF16B1BEEF1510031B3A5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 659AF18E1BEEF1A30031B3A5;
-			remoteInfo = "Hauth tvOS";
+			remoteInfo = "Voucher tvOS";
 		};
 		659AF1801BEEF1510031B3A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -57,13 +65,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		655E318E1BF043D7007370E9 /* Embed Frameworks */ = {
+		653F0C881BF1CF1300ED30D0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				655E318B1BF043D7007370E9 /* Voucher.framework in Embed Frameworks */,
+				653F0C851BF1CF1200ED30D0 /* Voucher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		653F0C8D1BF1CF2200ED30D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				653F0C8A1BF1CF2200ED30D0 /* Voucher.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653F0C7E1BF1A22F00ED30D0 /* Voucher.framework in Frameworks */,
+				653F0C841BF1CF1200ED30D0 /* Voucher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659AF2061BEF38C00031B3A5 /* Voucher.framework in Frameworks */,
+				653F0C891BF1CF2200ED30D0 /* Voucher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +344,12 @@
 				659AF1C61BEF1D3E0031B3A5 /* Sources */,
 				659AF1C71BEF1D3E0031B3A5 /* Frameworks */,
 				659AF1C81BEF1D3E0031B3A5 /* Resources */,
+				653F0C881BF1CF1300ED30D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				653F0C871BF1CF1300ED30D0 /* PBXTargetDependency */,
 			);
 			name = "Voucher iOS App";
 			productName = "Hauth iOS App";
@@ -342,12 +363,12 @@
 				659AF1DC1BEF1D530031B3A5 /* Sources */,
 				659AF1DD1BEF1D530031B3A5 /* Frameworks */,
 				659AF1DE1BEF1D530031B3A5 /* Resources */,
-				655E318E1BF043D7007370E9 /* Embed Frameworks */,
+				653F0C8D1BF1CF2200ED30D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				655E318D1BF043D7007370E9 /* PBXTargetDependency */,
+				653F0C8C1BF1CF2200ED30D0 /* PBXTargetDependency */,
 			);
 			name = "Voucher tvOS App";
 			productName = "Hauth tvOS App";
@@ -366,6 +387,7 @@
 				TargetAttributes = {
 					659AF1731BEEF1510031B3A5 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 99M2UD9XXB;
 					};
 					659AF17D1BEEF1510031B3A5 = {
 						CreatedOnToolsVersion = 7.1;
@@ -498,10 +520,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		655E318D1BF043D7007370E9 /* PBXTargetDependency */ = {
+		653F0C871BF1CF1300ED30D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 659AF1731BEEF1510031B3A5 /* Voucher iOS */;
+			targetProxy = 653F0C861BF1CF1300ED30D0 /* PBXContainerItemProxy */;
+		};
+		653F0C8C1BF1CF2200ED30D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 659AF18E1BEEF1A30031B3A5 /* Voucher tvOS */;
-			targetProxy = 655E318C1BF043D7007370E9 /* PBXContainerItemProxy */;
+			targetProxy = 653F0C8B1BF1CF2200ED30D0 /* PBXContainerItemProxy */;
 		};
 		659AF1811BEEF1510031B3A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -629,6 +656,7 @@
 		659AF1891BEEF1510031B3A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -645,6 +673,7 @@
 		659AF18A1BEEF1510031B3A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
