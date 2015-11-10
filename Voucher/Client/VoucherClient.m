@@ -14,6 +14,7 @@
 @property (copy, nonatomic) NSString *displayName;
 @property (copy, nonatomic) NSString *appId;
 @property (assign, nonatomic) BOOL isSearching;
+@property (assign, nonatomic) BOOL isConnectedToServer;
 
 @property (copy, nonatomic) VoucherClientCompletionHandler completionHandler;
 
@@ -42,7 +43,7 @@
 
 - (void)dealloc
 {
-    [self stopSearching];
+    [self stop];
 }
 
 - (void)startSearchingWithCompletion:(VoucherClientCompletionHandler)completionHandler
@@ -61,6 +62,13 @@
     [self.browser searchForServicesOfType:self.serviceName inDomain:@"local"];
 }
 
+- (void)stop
+{
+    [self stopSearching];
+    [self disconnectFromServer];
+    self.completionHandler = nil;
+}
+
 - (void)stopSearching
 {
     if (!self.isSearching) {
@@ -72,14 +80,12 @@
     [self.browser stop];
     self.browser.delegate = nil;
     self.browser = nil;
-
-    self.completionHandler = nil;
 }
 
 
 #pragma mark - Services
 
-- (void)selectService:(NSNetService *)service
+- (void)connectToServer:(NSNetService *)service
 {
     NSAssert(self.currentlyAvailableServices.count > 0,
              @"Tried to select a service when none were available");
@@ -97,6 +103,7 @@
 
     BOOL success = [self.server getInputStream:&inputStream outputStream:&outputStream];
     if (success) {
+        self.isConnectedToServer = YES;
         self.inputStream = inputStream;
         self.outputStream = outputStream;
 
@@ -104,6 +111,14 @@
 
         [self sendAuthRequest];
     }
+}
+
+- (void)disconnectFromServer
+{
+    [self closeStreams];
+    self.server.delegate = nil;
+    self.server = nil;
+    self.isConnectedToServer = NO;
 }
 
 - (void)sendAuthRequest
@@ -169,7 +184,7 @@
     }
     if (!self.server && self.currentlyAvailableServices.count > 0) {
         NSNetService *service = self.currentlyAvailableServices[0];
-        [self selectService:service];
+        [self connectToServer:service];
     }
 }
 
