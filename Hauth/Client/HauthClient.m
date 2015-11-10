@@ -167,6 +167,10 @@
     if (![self.currentlyAvailableServices containsObject:service]) {
         [self.currentlyAvailableServices addObject:service];
     }
+    if (!self.server && self.currentlyAvailableServices.count > 0) {
+        NSNetService *service = self.currentlyAvailableServices[0];
+        [self selectService:service];
+    }
 }
 
 /* Sent to the NSNetServiceBrowser instance's delegate when a previously discovered domain is no longer available.
