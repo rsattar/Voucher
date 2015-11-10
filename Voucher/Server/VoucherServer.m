@@ -44,7 +44,7 @@
 
 - (void)startAdvertisingWithRequestHandler:(VoucherServerRequestHandler)requestHandler
 {
-    if (self.isAdvertising) {
+    if (self.server != nil) {
         [self stopAdvertising];
     }
 
@@ -62,10 +62,6 @@
 
 - (void)stopAdvertising
 {
-    if (!self.isAdvertising) {
-        return;
-    }
-
     self.shouldBeAdvertising = NO;
     [self closeStreams];
 
@@ -132,6 +128,8 @@
 
 - (void)netServiceDidPublish:(NSNetService *)sender
 {
+    assert(sender == self.server);
+    self.isAdvertising = YES;
     self.registeredServerName = self.server.name;
     NSLog(@"Advertising Voucher Server as: '%@'", self.registeredServerName);
 }
@@ -178,6 +176,7 @@
 // happens and then decide how best to handle it.
 {
     assert(sender == self.server);
+    self.isAdvertising = NO;
     // This will also get called if, while the server is published, the app
     // (iOS) goes to the background, then comes back.
     // This fails with a NSNetServicesUnknownError (-72000). For Voucher,
