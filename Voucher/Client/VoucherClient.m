@@ -231,4 +231,28 @@
     }
 }
 
+#pragma mark - Setters
+
+- (void)setIsSearching:(BOOL)isSearching
+{
+    if (_isSearching == isSearching) {
+        return;
+    }
+    _isSearching = isSearching;
+    if ([self.delegate respondsToSelector:@selector(voucherClient:didUpdateSearching:)]) {
+        [self.delegate voucherClient:self didUpdateSearching:_isSearching];
+    }
+}
+
+- (void)setIsConnectedToServer:(BOOL)isConnectedToServer
+{
+    if (_isConnectedToServer == isConnectedToServer) {
+        return;
+    }
+    _isConnectedToServer = isConnectedToServer;
+    if ([self.delegate respondsToSelector:@selector(voucherClient:didUpdateConnectionToServer:serverName:)]) {
+        [self.delegate voucherClient:self didUpdateConnectionToServer:_isConnectedToServer serverName:self.server.name];
+    }
+}
+
 @end
