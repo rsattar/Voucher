@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Hauth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
