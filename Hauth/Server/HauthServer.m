@@ -126,6 +126,7 @@
 - (void)netServiceDidPublish:(NSNetService *)sender
 {
     self.registeredServerName = self.server.name;
+    NSLog(@"Advertising Hauth Server as: '%@'", self.registeredServerName);
 }
 
 - (void)netService:(NSNetService *)sender didAcceptConnectionWithInputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream
