@@ -12,7 +12,7 @@
 @interface VoucherServer () <NSNetServiceDelegate>
 
 @property (copy, nonatomic) NSString *displayName;
-@property (copy, nonatomic) NSString *appId;
+@property (copy, nonatomic) NSString *uniqueSharedId;
 @property (assign, nonatomic) BOOL isAdvertising;
 @property (assign, nonatomic) BOOL shouldBeAdvertising;
 @property (assign, nonatomic) BOOL isConnectedToClient;
@@ -26,13 +26,13 @@
 
 @implementation VoucherServer
 
-- (instancetype)initWithDisplayName:(NSString *)displayName appId:(NSString *)appId
+- (instancetype)initWithDisplayName:(NSString *)displayName uniqueSharedId:(NSString *)uniqueSharedId
 {
     self = [super init];
     if (self) {
         self.displayName = displayName;
-        self.appId = appId;
-        NSString *appString = [self.appId stringByReplacingOccurrencesOfString:@"." withString:@"_"];
+        self.uniqueSharedId = uniqueSharedId;
+        NSString *appString = [self.uniqueSharedId stringByReplacingOccurrencesOfString:@"." withString:@"_"];
         self.serviceName = [NSString stringWithFormat:kVoucherServiceNameFormat, appString];
     }
     return self;

@@ -26,11 +26,11 @@ typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable tokenData, NS
 @property (weak, nonatomic) NSObject <VoucherClientDelegate> *delegate;
 
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
-@property (readonly, copy, nonatomic, nonnull) NSString *appId;
+@property (readonly, copy, nonatomic, nonnull) NSString *uniqueSharedId;
 @property (readonly, assign, nonatomic) BOOL isSearching;
 
 - (nullable instancetype)init NS_UNAVAILABLE;
-- (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName appId:(nonnull NSString *)appId NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName uniqueSharedId:(nonnull NSString *)uniqueSharedId NS_DESIGNATED_INITIALIZER;
 
 - (void)startSearchingWithCompletion:(nonnull VoucherClientCompletionHandler)completionHandler;
 - (void)stopSearching;

@@ -26,7 +26,7 @@ class ViewController: UIViewController, VoucherServerDelegate {
         super.viewDidLoad()
         let name = UIDevice.currentDevice().name
         let uniqueId = "VoucherTest"
-        self.server = VoucherServer(displayName: name, appId: uniqueId)
+        self.server = VoucherServer(displayName: name, uniqueSharedId: uniqueId)
         self.server?.delegate = self
     }
 

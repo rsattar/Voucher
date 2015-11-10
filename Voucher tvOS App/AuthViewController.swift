@@ -29,7 +29,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         
         let displayName = UIDevice.currentDevice().name
         let uniqueId = "VoucherTest";
-        self.client = VoucherClient(displayName: displayName, appId: uniqueId)
+        self.client = VoucherClient(displayName: displayName, uniqueSharedId: uniqueId)
         self.client?.delegate = self
     }
 

@@ -26,12 +26,12 @@ typedef void (^VoucherServerRequestHandler)(NSString * _Nonnull displayName, Vou
 @property (weak, nonatomic) NSObject <VoucherServerDelegate> *delegate;
 
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
-@property (readonly, copy, nonatomic, nonnull) NSString *appId;
+@property (readonly, copy, nonatomic, nonnull) NSString *uniqueSharedId;
 @property (readonly, assign, nonatomic) BOOL isAdvertising;
 @property (readonly, assign, nonatomic) BOOL isConnectedToClient;
 
 - (nullable instancetype)init NS_UNAVAILABLE;
-- (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName appId:(nonnull NSString *)appId NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName uniqueSharedId:(nonnull NSString *)uniqueSharedId NS_DESIGNATED_INITIALIZER;
 
 - (void)startAdvertisingWithRequestHandler:(nonnull VoucherServerRequestHandler)requestHandler;
 - (void)stop;
