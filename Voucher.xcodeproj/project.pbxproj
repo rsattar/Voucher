@@ -31,12 +31,13 @@
 		653F0C721BF18E3900ED30D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C6C1BF18E3900ED30D0 /* AppDelegate.swift */; };
 		653F0C731BF18E3900ED30D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C6D1BF18E3900ED30D0 /* Assets.xcassets */; };
 		653F0C741BF18E3900ED30D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653F0C6E1BF18E3900ED30D0 /* Main.storyboard */; };
-		653F0C761BF18E3900ED30D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C711BF18E3900ED30D0 /* ViewController.swift */; };
+		653F0C761BF18E3900ED30D0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C711BF18E3900ED30D0 /* AuthViewController.swift */; };
 		653F0C7A1BF18EB400ED30D0 /* VoucherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C781BF18EB400ED30D0 /* VoucherTests.m */; };
 		653F0C841BF1CF1200ED30D0 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
 		653F0C851BF1CF1200ED30D0 /* Voucher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		653F0C891BF1CF2200ED30D0 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; };
 		653F0C8A1BF1CF2200ED30D0 /* Voucher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Voucher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		653F0C8F1BF1D97900ED30D0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F0C8E1BF1D97900ED30D0 /* RootViewController.swift */; };
 		659AF17F1BEEF1510031B3A5 /* Voucher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Voucher.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,9 +110,10 @@
 		653F0C6D1BF18E3900ED30D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		653F0C6F1BF18E3900ED30D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		653F0C701BF18E3900ED30D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		653F0C711BF18E3900ED30D0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		653F0C711BF18E3900ED30D0 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		653F0C781BF18EB400ED30D0 /* VoucherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherTests.m; sourceTree = "<group>"; };
 		653F0C791BF18EB400ED30D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653F0C8E1BF1D97900ED30D0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		659AF1741BEEF1510031B3A5 /* Voucher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Voucher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		659AF17E1BEEF1510031B3A5 /* Voucher.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Voucher.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659AF1971BEEF1A30031B3A5 /* Voucher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Voucher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,7 +203,8 @@
 				653F0C6D1BF18E3900ED30D0 /* Assets.xcassets */,
 				653F0C6E1BF18E3900ED30D0 /* Main.storyboard */,
 				653F0C701BF18E3900ED30D0 /* Info.plist */,
-				653F0C711BF18E3900ED30D0 /* ViewController.swift */,
+				653F0C711BF18E3900ED30D0 /* AuthViewController.swift */,
+				653F0C8E1BF1D97900ED30D0 /* RootViewController.swift */,
 			);
 			path = "Voucher tvOS App";
 			sourceTree = "<group>";
@@ -513,7 +516,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				653F0C721BF18E3900ED30D0 /* AppDelegate.swift in Sources */,
-				653F0C761BF18E3900ED30D0 /* ViewController.swift in Sources */,
+				653F0C761BF18E3900ED30D0 /* AuthViewController.swift in Sources */,
+				653F0C8F1BF1D97900ED30D0 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

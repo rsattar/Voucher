@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthViewController.swift
 //  Voucher tvOS App
 //
 //  Created by Rizwan Sattar on 11/7/15.
@@ -9,8 +9,9 @@
 import UIKit
 import Voucher
 
-class ViewController: UIViewController {
+class AuthViewController: UIViewController {
 
+    var delegate: AuthViewControllerDelegate?
     var client: VoucherClient?
 
     deinit {
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
                 if let error = error {
                     NSLog("Encountered error retrieving data: \(error)")
                 }
+                self.delegate?.authController(self, didSucceed: false)
                 return
             }
 
@@ -56,7 +58,9 @@ class ViewController: UIViewController {
     func onTokenDataReceived(tokenData: NSData, responderName:String) {
         let tokenString = String(data: tokenData, encoding: NSUTF8StringEncoding)!
         let alert = UIAlertController(title: "Received Token!", message: "Received token, '\(tokenString)' from '\(responderName)'", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { [unowned self] action in
+            self.delegate?.authController(self, didSucceed: true)
+            }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
@@ -64,7 +68,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
-
+protocol AuthViewControllerDelegate {
+    func authController(controller:AuthViewController, didSucceed succeeded:Bool)
 }
 

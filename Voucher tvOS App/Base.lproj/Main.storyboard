@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Voucher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Voucher_tvOS_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,12 +15,92 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="TgO-St-H5a">
+                                <rect key="frame" x="730" y="352" width="460" height="377"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Authenticated" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW7-Iz-W87">
+                                        <rect key="frame" x="0.0" y="0.0" width="460" height="46"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH1-zu-Fbb">
+                                        <rect key="frame" x="0.0" y="78" width="460" height="86"/>
+                                        <animations/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="Clear Authentication"/>
+                                        <connections>
+                                            <action selector="onClearDataTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="PWf-TZ-zFw"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="iR7-Ut-wnW" userLabel="Authentication UI">
+                                        <rect key="frame" x="0.0" y="196" width="460" height="181"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzK-6J-MVD">
+                                                <rect key="frame" x="0.0" y="0.0" width="460" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="Start Authenticating"/>
+                                                <connections>
+                                                    <segue destination="r18-zC-sKJ" kind="presentation" identifier="showVoucher" id="l1P-xq-hzI"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="You should be connected to the same network as your iPhone/iPad." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvI-6Q-5M0">
+                                                <rect key="frame" x="0.0" y="110" width="460" height="71"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="460" id="7Vk-HT-Dcq"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="460" id="Myf-Lq-NAE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TgO-St-H5a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="350-QS-ffy"/>
+                            <constraint firstItem="TgO-St-H5a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="H6x-f9-LlA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authenticationLabel" destination="qW7-Iz-W87" id="ZHT-LX-615"/>
+                        <outlet property="authenticationUI" destination="iR7-Ut-wnW" id="9wq-hg-e3s"/>
+                        <outlet property="clearAuthenticationButton" destination="HH1-zu-Fbb" id="SUV-3S-9kQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1949" y="225"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="aqR-ls-PG3">
+            <objects>
+                <viewController id="r18-zC-sKJ" customClass="AuthViewController" customModule="Voucher_tvOS_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9a8-Zu-dWS"/>
+                        <viewControllerLayoutGuide type="bottom" id="X4W-28-W7L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hWG-ks-cFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPq-Ah-ju4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3210" y="438"/>
         </scene>
     </scenes>
 </document>
