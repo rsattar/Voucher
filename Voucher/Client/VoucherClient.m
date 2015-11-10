@@ -129,6 +129,16 @@
     self.isConnectedToServer = NO;
 }
 
+- (void)handleStreamEnd:(NSStream *)stream
+{
+    // On an unexpected ending of the stream, disconnect
+    // and try and find the next available server (if any)
+    [super handleStreamEnd:stream];
+    [self disconnectFromServer];
+    [self connectToAvailableServer];
+    
+}
+
 - (void)sendAuthRequest
 {
     NSDictionary *requestDict = @{@"displayName" : self.displayName};
