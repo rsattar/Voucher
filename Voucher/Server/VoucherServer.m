@@ -117,7 +117,10 @@
 {
     [super handleStreamEnd:stream];
 
-    [self stopAdvertising];
+    NSLog(@"Encountered unexpected stream end on VoucherServer, restarting server");
+    // An unexpected error occurred here, so
+    // restart server (is this the right move here?)
+    [self startAdvertisingWithRequestHandler:self.requestHandler];
 }
 
 
