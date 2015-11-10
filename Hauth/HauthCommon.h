@@ -10,6 +10,6 @@
 #define HauthCommon_h
 #import <Foundation/Foundation.h>
 
-static NSString * kHauthServiceNameFormat = @"_hauth_%@._tcp";
+static NSString * kHauthServiceNameFormat = @"_hauth_%@._tcp.";
 
 #endif /* HauthCommon_h */
