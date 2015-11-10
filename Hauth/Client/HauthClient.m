@@ -34,7 +34,8 @@
     if (self) {
         self.displayName = displayName;
         self.appId = appId;
-        self.serviceName = [NSString stringWithFormat:kHauthServiceNameFormat, self.appId];
+        NSString *appString = [self.appId stringByReplacingOccurrencesOfString:@"." withString:@"_"];
+        self.serviceName = [NSString stringWithFormat:kHauthServiceNameFormat, appString];
     }
     return self;
 }
@@ -57,7 +58,7 @@
     self.browser = [[NSNetServiceBrowser alloc] init];
     self.browser.includesPeerToPeer = YES;
     self.browser.delegate = self;
-    [self.browser searchForServicesOfType:self.serviceName inDomain:@".local"];
+    [self.browser searchForServicesOfType:self.serviceName inDomain:@"local"];
 }
 
 - (void)stopListening

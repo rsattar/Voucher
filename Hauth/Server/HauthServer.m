@@ -30,7 +30,8 @@
     if (self) {
         self.displayName = displayName;
         self.appId = appId;
-        self.serviceName = [NSString stringWithFormat:kHauthServiceNameFormat, self.appId];
+        NSString *appString = [self.appId stringByReplacingOccurrencesOfString:@"." withString:@"_"];
+        self.serviceName = [NSString stringWithFormat:kHauthServiceNameFormat, appString];
     }
     return self;
 }
@@ -48,7 +49,7 @@
 
     self.requestHandler = requestHandler;
 
-    self.server = [[NSNetService alloc] initWithDomain:@".local"
+    self.server = [[NSNetService alloc] initWithDomain:@"local"
                                                               type:self.serviceName
                                                               name:self.displayName];
     self.server.includesPeerToPeer = YES;
