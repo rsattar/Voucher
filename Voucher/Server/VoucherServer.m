@@ -14,6 +14,7 @@
 @property (copy, nonatomic) NSString *displayName;
 @property (copy, nonatomic) NSString *appId;
 @property (assign, nonatomic) BOOL isAdvertising;
+@property (assign, nonatomic) BOOL shouldBeAdvertising;
 
 // Advertising
 @property (copy, nonatomic) VoucherServerRequestHandler requestHandler;
@@ -47,6 +48,7 @@
         [self stopAdvertising];
     }
 
+    self.shouldBeAdvertising = YES;
     self.requestHandler = requestHandler;
 
     self.server = [[NSNetService alloc] initWithDomain:@"local"
@@ -64,6 +66,7 @@
         return;
     }
 
+    self.shouldBeAdvertising = NO;
     [self closeStreams];
 
     [self.server stop];
