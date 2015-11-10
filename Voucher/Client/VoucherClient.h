@@ -33,6 +33,6 @@ typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable tokenData, NS
 - (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName uniqueSharedId:(nonnull NSString *)uniqueSharedId NS_DESIGNATED_INITIALIZER;
 
 - (void)startSearchingWithCompletion:(nonnull VoucherClientCompletionHandler)completionHandler;
-- (void)stopSearching;
+- (void)stop;
 
 @end

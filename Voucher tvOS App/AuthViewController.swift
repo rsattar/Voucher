@@ -18,7 +18,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
     @IBOutlet weak var connectionLabel: UILabel!
 
     deinit {
-        self.client?.stopSearching()
+        self.client?.stop()
         self.client?.delegate = nil
         self.client = nil
     }
@@ -40,7 +40,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         self.client?.startSearchingWithCompletion { [unowned self] (tokenData, displayName, error) -> Void in
 
             defer {
-                self.client?.stopSearching()
+                self.client?.stop()
             }
 
             guard let tokenData = tokenData, let displayName = displayName else {
@@ -58,7 +58,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        self.client?.stopSearching()
+        self.client?.stop()
     }
 
     func onNoDataReceived(error: NSError?) {
