@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import Voucher
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, VoucherServerDelegate {
+
+    var server: VoucherServer?
+
+    @IBOutlet var serverStatusLabel: UILabel!
+    @IBOutlet var connectionStatusLabel: UILabel!
+
+    deinit {
+        self.server?.stopAdvertising()
+        self.server?.delegate = nil
+        self.server = nil
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let name = UIDevice.currentDevice().name
+        let uniqueId = "VoucherTest"
+        self.server = VoucherServer(displayName: name, appId: uniqueId)
+        self.server?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +35,41 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.server?.startAdvertisingWithRequestHandler { (displayName, responseHandler) -> Void in
+
+            let alertController = UIAlertController(title: "Allow Auth?", message: "Allow \"\(displayName)\" access to your login?", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Not Now", style: .Cancel, handler: { action in
+                responseHandler(nil, nil)
+            }))
+
+            alertController.addAction(UIAlertAction(title: "Allow", style: .Default, handler: { action in
+                let tokenData = "THIS IS AN AUTH TOKEN".dataUsingEncoding(NSUTF8StringEncoding)!
+                responseHandler(tokenData, nil)
+            }))
+
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.server?.stopAdvertising()
+    }
+
+    // MARK: - VoucherServerDelegate
+
+    func voucherServer(server: VoucherServer, didUpdateAdvertising isAdvertising: Bool) {
+        var text = "❌ Server Offline."
+        if (isAdvertising) {
+            text = "✅ Server Online."
+        }
+        self.serverStatusLabel.text = text
+    }
 
 }
 
