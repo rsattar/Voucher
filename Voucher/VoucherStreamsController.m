@@ -186,9 +186,6 @@ static NSUInteger const BUFFER_SIZE = 1024;
                 NSLog(@"   => Output Stream");
             }
             [self handleStreamEnd:stream];
-            //if (self.requestHandler) {
-            //    [self startAdvertisingWithRequestHandler:self.requestHandler];
-            // }
         } break;
     }
 }
