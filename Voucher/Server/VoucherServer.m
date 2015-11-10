@@ -178,9 +178,20 @@
 // happens and then decide how best to handle it.
 {
     assert(sender == self.server);
+    // This will also get called if, while the server is published, the app
+    // (iOS) goes to the background, then comes back.
+    // This fails with a NSNetServicesUnknownError (-72000). For Voucher,
+    // we want to get the server back up and running, if we already thought
+    // we were
 #pragma unused(sender)
-#pragma unused(errorDict)
-    assert(NO);
+    NSNetServicesError errorCode = [errorDict[NSNetServicesErrorCode] integerValue];
+    NSLog(@"Voucher Server stopped publishing, due to error: %ld", errorCode);
+    if (errorCode == NSNetServicesUnknownError) {
+        if (self.shouldBeAdvertising) {
+            NSLog(@"Restarting Voucher Server...");
+            [self startAdvertisingWithRequestHandler:self.requestHandler];
+        }
+    }
 }
 
 
