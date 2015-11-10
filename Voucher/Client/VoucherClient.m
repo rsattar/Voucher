@@ -87,9 +87,11 @@
 
 - (void)connectToAvailableServer
 {
-    if (self.isConnectedToServer && self.currentlyAvailableServices.count > 0) {
+    if (!self.isConnectedToServer && self.currentlyAvailableServices.count > 0) {
         NSNetService *service = self.currentlyAvailableServices[0];
         [self connectToServer:service];
+    } else {
+        NSLog(@"No available server to connect to, yet.");
     }
 }
 
