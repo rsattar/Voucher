@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655E318A1BF043D7007370E9 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Hauth.framework */; };
+		655E318B1BF043D7007370E9 /* Hauth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Hauth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		659AF1781BEEF1510031B3A5 /* Hauth.h in Headers */ = {isa = PBXBuildFile; fileRef = 659AF1771BEEF1510031B3A5 /* Hauth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		659AF17F1BEEF1510031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Hauth.framework */; };
 		659AF1841BEEF1510031B3A5 /* HauthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659AF1831BEEF1510031B3A5 /* HauthTests.m */; };
@@ -35,10 +37,17 @@
 		659AF1E81BEF1D530031B3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659AF1E61BEF1D530031B3A5 /* Main.storyboard */; };
 		659AF1EA1BEF1D540031B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659AF1E91BEF1D540031B3A5 /* Assets.xcassets */; };
 		659AF1EF1BEF1D640031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1741BEEF1510031B3A5 /* Hauth.framework */; };
-		659AF1F31BEF2E2B0031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Hauth.framework */; };
+		659AF2061BEF38C00031B3A5 /* Hauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659AF1971BEEF1A30031B3A5 /* Hauth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		655E318C1BF043D7007370E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 659AF16B1BEEF1510031B3A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 659AF18E1BEEF1A30031B3A5;
+			remoteInfo = "Hauth tvOS";
+		};
 		659AF1801BEEF1510031B3A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 659AF16B1BEEF1510031B3A5 /* Project object */;
@@ -47,6 +56,20 @@
 			remoteInfo = Hauth;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		655E318E1BF043D7007370E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				655E318B1BF043D7007370E9 /* Hauth.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		659AF1741BEEF1510031B3A5 /* Hauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659AF1F31BEF2E2B0031B3A5 /* Hauth.framework in Frameworks */,
+				659AF2061BEF38C00031B3A5 /* Hauth.framework in Frameworks */,
+				655E318A1BF043D7007370E9 /* Hauth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,10 +341,12 @@
 				659AF1DC1BEF1D530031B3A5 /* Sources */,
 				659AF1DD1BEF1D530031B3A5 /* Frameworks */,
 				659AF1DE1BEF1D530031B3A5 /* Resources */,
+				655E318E1BF043D7007370E9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				655E318D1BF043D7007370E9 /* PBXTargetDependency */,
 			);
 			name = "Hauth tvOS App";
 			productName = "Hauth tvOS App";
@@ -342,6 +368,9 @@
 					};
 					659AF17D1BEEF1510031B3A5 = {
 						CreatedOnToolsVersion = 7.1;
+					};
+					659AF18E1BEEF1A30031B3A5 = {
+						DevelopmentTeam = 99M2UD9XXB;
 					};
 					659AF1C91BEF1D3E0031B3A5 = {
 						CreatedOnToolsVersion = 7.1;
@@ -468,6 +497,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		655E318D1BF043D7007370E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 659AF18E1BEEF1A30031B3A5 /* Hauth tvOS */;
+			targetProxy = 655E318C1BF043D7007370E9 /* PBXContainerItemProxy */;
+		};
 		659AF1811BEEF1510031B3A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 659AF1731BEEF1510031B3A5 /* Hauth iOS */;
@@ -646,6 +680,7 @@
 		659AF1951BEEF1A30031B3A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -658,12 +693,14 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		659AF1961BEEF1A30031B3A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -676,6 +713,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
