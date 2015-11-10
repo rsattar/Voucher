@@ -9,10 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "VoucherStreamsController.h"
 
+@class VoucherServer;
+@protocol VoucherServerDelegate <NSObject>
+
+@optional
+- (void)voucherServer:(nonnull VoucherServer *)server didUpdateAdvertising:(BOOL)isAdvertising;
+
+@end
+
+
 typedef void (^VoucherServerResponseHandler)(NSData * _Nullable tokenData, NSError * _Nullable error);
 typedef void (^VoucherServerRequestHandler)(NSString * _Nonnull displayName, VoucherServerResponseHandler _Nonnull responseHandler);
 
 @interface VoucherServer : VoucherStreamsController
+
+@property (weak, nonatomic) NSObject <VoucherServerDelegate> *delegate;
 
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
 @property (readonly, copy, nonatomic, nonnull) NSString *appId;

@@ -178,5 +178,16 @@
 }
 
 
-#pragma mark - Streams
+#pragma mark - Setters
+
+- (void)setIsAdvertising:(BOOL)isAdvertising
+{
+    if (_isAdvertising == isAdvertising) {
+        return;
+    }
+    _isAdvertising = isAdvertising;
+    if ([self.delegate respondsToSelector:@selector(voucherServer:didUpdateAdvertising:)]) {
+        [self.delegate voucherServer:self didUpdateAdvertising:_isAdvertising];
+    }
+}
 @end
