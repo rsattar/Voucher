@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1949" y="225"/>
+            <point key="canvasLocation" x="2851" y="206"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="aqR-ls-PG3">
@@ -95,12 +95,54 @@
                     <view key="view" contentMode="scaleToFill" id="hWG-ks-cFQ">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open the Voucher iOS App to automatically begin authentication." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgk-Wq-XFX">
+                                <rect key="frame" x="405" y="120" width="1110" height="46"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-mL-edj">
+                                <rect key="frame" x="320" y="462" width="1280" height="156"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for iOS App..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-TX-MG4">
+                                        <rect key="frame" x="0.0" y="0.0" width="1280" height="46"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Connected Yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xw7-Ro-a14">
+                                        <rect key="frame" x="0.0" y="110" width="1280" height="46"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1280" id="hVW-ix-1iu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <animations/>
+                        <constraints>
+                            <constraint firstItem="cgk-Wq-XFX" firstAttribute="top" secondItem="9a8-Zu-dWS" secondAttribute="bottom" constant="120" id="54l-yL-gPU"/>
+                            <constraint firstItem="2ho-mL-edj" firstAttribute="centerX" secondItem="hWG-ks-cFQ" secondAttribute="centerX" id="Bts-qm-qKs"/>
+                            <constraint firstItem="2ho-mL-edj" firstAttribute="centerY" secondItem="hWG-ks-cFQ" secondAttribute="centerY" id="fGQ-8Q-BBX"/>
+                            <constraint firstItem="cgk-Wq-XFX" firstAttribute="centerX" secondItem="hWG-ks-cFQ" secondAttribute="centerX" id="fQc-my-Qqe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectionLabel" destination="xw7-Ro-a14" id="ucf-mj-pTV"/>
+                        <outlet property="searchingLabel" destination="j8M-TX-MG4" id="OPn-kP-qaP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPq-Ah-ju4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210" y="438"/>
+            <point key="canvasLocation" x="2851" y="1425"/>
         </scene>
     </scenes>
 </document>

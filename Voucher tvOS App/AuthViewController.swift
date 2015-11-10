@@ -9,28 +9,34 @@
 import UIKit
 import Voucher
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, VoucherClientDelegate {
 
     var delegate: AuthViewControllerDelegate?
     var client: VoucherClient?
 
+    @IBOutlet weak var searchingLabel: UILabel!
+    @IBOutlet weak var connectionLabel: UILabel!
+
     deinit {
         self.client?.stopSearching()
+        self.client?.delegate = nil
         self.client = nil
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
+        let displayName = UIDevice.currentDevice().name
+        let uniqueId = "VoucherTest";
+        self.client = VoucherClient(displayName: displayName, appId: uniqueId)
+        self.client?.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let displayName = UIDevice.currentDevice().name
-        let uniqueId = "VoucherTest";
 
-        self.client = VoucherClient(displayName: displayName, appId: uniqueId)
         self.client?.startSearchingWithCompletion { [unowned self] (tokenData, displayName, error) -> Void in
 
             defer {
@@ -67,6 +73,24 @@ class AuthViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - VoucherClientDelegate
+
+    func voucherClient(client: VoucherClient, didUpdateSearching isSearching: Bool) {
+        if isSearching {
+            self.searchingLabel.text = "Searching for iOS App..."
+        } else {
+            self.searchingLabel.text = "Not Searching."
+        }
+    }
+
+    func voucherClient(client: VoucherClient, didUpdateConnectionToServer isConnectedToServer: Bool, serverName: String?) {
+        if isConnectedToServer {
+            self.connectionLabel.text = "Connected to '\(serverName!)'"
+        } else {
+            self.connectionLabel.text = "Not Connected Yet."
+        }
     }
 }
 
