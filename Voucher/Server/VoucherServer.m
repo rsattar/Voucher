@@ -180,9 +180,6 @@
             [outputStream close];
         } else {
 
-            // S
-            [self stopAdvertising];
-
             // Latch the input and output sterams and kick off an open.
 
             self.inputStream  = inputStream;
