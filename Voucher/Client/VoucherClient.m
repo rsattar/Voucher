@@ -64,8 +64,8 @@
 
 - (void)stop
 {
-    [self stopSearching];
     [self disconnectFromServer];
+    [self stopSearching];
     self.completionHandler = nil;
 }
 
@@ -168,6 +168,7 @@
 - (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)browser
 {
     NSLog(@"Browser will search");
+    self.isSearching = YES;
 }
 
 /* Sent to the NSNetServiceBrowser instance's delegate when the instance's previous running search request has stopped.
@@ -175,6 +176,7 @@
 - (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)browser
 {
     NSLog(@"Browser did stop search");
+    self.isSearching = NO;
 }
 
 /* Sent to the NSNetServiceBrowser instance's delegate when an error in searching for domains or services has occurred. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a search has been started successfully.
@@ -186,6 +188,7 @@
         NSNumber *errorCode = errorDict[errorDomain];
         NSLog(@"    '%@': %@", errorDomain, errorCode);
     }
+    self.isSearching = NO;
 }
 
 /* Sent to the NSNetServiceBrowser instance's delegate for each domain discovered. If there are more domains, moreComing will be YES. If for some reason handling discovered domains requires significant processing, accumulating domains until moreComing is NO and then doing the processing in bulk fashion may be desirable.
