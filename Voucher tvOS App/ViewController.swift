@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var client: VoucherClient?
 
     deinit {
-        self.client?.stopListening()
+        self.client?.stopSearching()
         self.client = nil
     }
 
@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         let uniqueId = "VoucherTest";
 
         self.client = VoucherClient(displayName: displayName, appId: uniqueId)
-        self.client?.startListeningWithCompletion { [unowned self] (tokenData, displayName, error) -> Void in
+        self.client?.startSearchingWithCompletion { [unowned self] (tokenData, displayName, error) -> Void in
 
             defer {
-                self.client?.stopListening()
+                self.client?.stopSearching()
             }
 
             guard let tokenData = tokenData, let displayName = displayName else {
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        self.client?.stopListening()
+        self.client?.stopSearching()
     }
 
     func onTokenDataReceived(tokenData: NSData, responderName:String) {

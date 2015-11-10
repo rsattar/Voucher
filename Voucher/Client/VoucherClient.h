@@ -15,12 +15,12 @@ typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable tokenData, NS
 
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
 @property (readonly, copy, nonatomic, nonnull) NSString *appId;
-@property (readonly, assign, nonatomic) BOOL isListening;
+@property (readonly, assign, nonatomic) BOOL isSearching;
 
 - (nullable instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName appId:(nonnull NSString *)appId NS_DESIGNATED_INITIALIZER;
 
-- (void)startListeningWithCompletion:(nonnull VoucherClientCompletionHandler)completionHandler;
-- (void)stopListening;
+- (void)startSearchingWithCompletion:(nonnull VoucherClientCompletionHandler)completionHandler;
+- (void)stopSearching;
 
 @end

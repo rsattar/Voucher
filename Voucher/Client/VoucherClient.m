@@ -13,7 +13,7 @@
 
 @property (copy, nonatomic) NSString *displayName;
 @property (copy, nonatomic) NSString *appId;
-@property (assign, nonatomic) BOOL isListening;
+@property (assign, nonatomic) BOOL isSearching;
 
 @property (copy, nonatomic) VoucherClientCompletionHandler completionHandler;
 
@@ -42,13 +42,13 @@
 
 - (void)dealloc
 {
-    [self stopListening];
+    [self stopSearching];
 }
 
-- (void)startListeningWithCompletion:(VoucherClientCompletionHandler)completionHandler
+- (void)startSearchingWithCompletion:(VoucherClientCompletionHandler)completionHandler
 {
-    if (self.isListening) {
-        [self stopListening];
+    if (self.isSearching) {
+        [self stopSearching];
     }
 
     self.currentlyAvailableServices = [NSMutableArray arrayWithCapacity:2];
@@ -61,9 +61,9 @@
     [self.browser searchForServicesOfType:self.serviceName inDomain:@"local"];
 }
 
-- (void)stopListening
+- (void)stopSearching
 {
-    if (!self.isListening) {
+    if (!self.isSearching) {
         return;
     }
 
