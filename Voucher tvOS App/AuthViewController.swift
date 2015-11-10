@@ -47,7 +47,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
                 if let error = error {
                     NSLog("Encountered error retrieving data: \(error)")
                 }
-                self.delegate?.authController(self, didSucceed: false)
+                self.onNoDataReceived(error)
                 return
             }
 
@@ -59,6 +59,14 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.client?.stopSearching()
+    }
+
+    func onNoDataReceived(error: NSError?) {
+        let alert = UIAlertController(title: "Authentication Failed", message: "The iOS App denied our authentication request.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Bummer!", style: .Default, handler: { [unowned self] action in
+            self.delegate?.authController(self, didSucceed: false)
+            }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     func onTokenDataReceived(tokenData: NSData, responderName:String) {
