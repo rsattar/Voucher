@@ -87,17 +87,17 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
 
     func voucherClient(client: VoucherClient, didUpdateSearching isSearching: Bool) {
         if isSearching {
-            self.searchingLabel.text = "Searching for iOS App..."
+            self.searchingLabel.text = "📡 Searching for Voucher Servers..."
         } else {
-            self.searchingLabel.text = "Not Searching."
+            self.searchingLabel.text = "❌ Not Searching."
         }
     }
 
     func voucherClient(client: VoucherClient, didUpdateConnectionToServer isConnectedToServer: Bool, serverName: String?) {
         if isConnectedToServer {
-            self.connectionLabel.text = "Connected to '\(serverName!)'"
+            self.connectionLabel.text = "✅ Connected to '\(serverName!)'"
         } else {
-            self.connectionLabel.text = "Not Connected Yet."
+            self.connectionLabel.text = "😴 Not Connected Yet."
         }
     }
 }
