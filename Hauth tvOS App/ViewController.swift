@@ -27,9 +27,9 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
 
         let displayName = UIDevice.currentDevice().name
-        let bundleId = NSBundle.mainBundle().bundleIdentifier!
+        let uniqueId = "HauthTest";
 
-        self.client = HauthClient(displayName: displayName, appId: bundleId)
+        self.client = HauthClient(displayName: displayName, appId: uniqueId)
         self.client?.startListeningWithCompletion { [unowned self] (tokenData, displayName, error) -> Void in
 
             defer {

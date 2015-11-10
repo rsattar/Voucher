@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let name = UIDevice.currentDevice().name;
-        let appId = NSBundle.mainBundle().bundleIdentifier!;
-        self.server = HauthServer(displayName: name, appId: appId)
+        let uniqueId = "HauthTest";
+        self.server = HauthServer(displayName: name, appId: uniqueId)
         return true
     }
 
