@@ -8,6 +8,25 @@
 
 #import <XCTest/XCTest.h>
 
+// Things to test:
+// Server:
+// - Can publish given good name and unique id
+// - cannot publish with invalid name and unique id
+// - Can start or resume serving if/after airplane mode
+// Client:
+// - Can start browsing with good name + id
+// - Cannot start browing bad name and/or id
+// - Can start or resume browsing if/after airplane mode
+// -
+// Integration tests of both:
+// - Client connects to server, then disconnects after opening streams
+//      => Server should resume serving, ready to receive connections
+//      => Client should be able to connect to next server
+// - Client connects to server, client sends data, then disconnects while server is waiting for user response
+// - Client connects to server, server stops publishing, then resumes publishing
+// - Client up first;, then server comes online
+// - Server up first, then client comes online
+
 @interface VoucherTests : XCTestCase
 
 @end
