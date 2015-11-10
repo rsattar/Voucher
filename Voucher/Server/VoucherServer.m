@@ -63,6 +63,7 @@
 
 - (void)stop
 {
+    [self disconnectClient];
     [self stopAdvertising];
     self.requestHandler = nil;
 }
@@ -70,13 +71,19 @@
 - (void)stopAdvertising
 {
     self.shouldBeAdvertising = NO;
-    [self closeStreams];
 
-    [self.server stop];
-    self.server.delegate = nil;
-    self.server = nil;
+    if (self.server != nil) {
+        [self.server stop];
+        self.server.delegate = nil;
+        self.server = nil;
+    }
     self.registeredServerName = nil;
     self.isAdvertising = NO;
+}
+
+- (void)disconnectClient
+{
+    [self closeStreams];
 }
 
 - (void)closeStreams
