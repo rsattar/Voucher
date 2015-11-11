@@ -39,9 +39,8 @@ When the user triggers a "Login" button, your app should display some UI instruc
 import Voucher
 
 func startVoucherClient() {
-    let displayName = UIDevice.currentDevice().name
     let uniqueId = "SomethingUnique";
-    self.voucher = VoucherClient(displayName: displayName, uniqueSharedId: uniqueId)
+    self.voucher = VoucherClient(uniqueSharedId: uniqueId)
     
     self.voucher.startSearchingWithCompletion { [unowned self] tokenData, displayName, error in
 
@@ -64,9 +63,8 @@ If your iOS app has auth credentials, it should start a Voucher Server, so it ca
 import Voucher
 
 func startVoucherServer() {
-    let name = UIDevice.currentDevice().name
     let uniqueId = "SomethingUnique"
-    self.server = VoucherServer(displayName: name, uniqueSharedId: uniqueId)
+    self.server = VoucherServer(uniqueSharedId: uniqueId)
 
     self.server.startAdvertisingWithRequestHandler { (displayName, responseHandler) -> Void in
 
@@ -98,9 +96,7 @@ In your login screen, you should still show the manual entry UI, but add messagi
 ## To do / Things I'd Love Your Help With!
 * Encryption? Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
 
-* Maybe change the response to be not called `tokenData`, as it's an `NSData` object, so anything can be passed back. 
-
-* Future proofing: Add versioning to the socket protocol. Currently only the content-length preamble and an `NSDictionary` (serialized as `NSData`) is sent back and forth.
+* Maybe change the response to be not called `tokenData`, as it's an `NSData` object, so anything can be passed back.
 
 * Make Voucher Server work on `OS X`, and even `tvOS`! Would probably just need new framework targets, and additional test apps.
 
