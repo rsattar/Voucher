@@ -96,8 +96,8 @@ func startVoucherServer() {
 ### Use tokens, not passwords
 While you can send whatever data you like back to tvOS, you should you pass back an **OAuth** token, or better yet, generate some kind of a *single-use token* on your server and send that. [Cluster](https://cluster.co), for example, uses single-use tokens to do auto-login from web to iOS app. Check out this [Medium post](https://library.launchkit.io/how-ios-9-s-safari-view-controller-could-completely-change-your-app-s-onboarding-experience-2bcf2305137f?source=your-stories) that shows how I do it! The same model can apply for iOS to tvOS logins.
 
-### Voucher shouldn't be the only login option
-In your login screen, you should still show the manual entry UI, but add messaging that if the user simply opens the iOS app they can login that way too.
+### Voucher can't be the only login option
+In your login screen, you must still show the manual entry UI according to the [App Store Submission Guidelines](http://www.appstorereviewguidelineshistory.com/articles/2015-10-21-guidelines-updated-for-tvos-apps/) (Section 2.27). Add messaging that, in addition to the on screen form, the user can simply open the iOS app to login.
 
 ## Todo / Things I'd Love Your Help With!
 * Encryption? Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
