@@ -15,10 +15,9 @@ The iOS app can then show a notification to the user:
 If the user accepts, then the iOS app can send some authentication data back to the tvOS app (in this case, an auth token string)
 <p align="center"><img src="http://cl.ly/image/1f2g3G3q3625/Screen%20Shot%202015-11-11%20at%2011.15.07%20AM.png" width="600" alt="Sample tvOS App"/></p>
 
-
 ## Installation
 
-Voucher is available through [Carthage](https://github.com/Carthage/Carthage), and [Cocoapods](https://cocoapods.org). You can also manually install it, if that's your jam.
+Voucher is available through [Carthage](https://github.com/Carthage/Carthage) and [Cocoapods](https://cocoapods.org). You can also manually install it, if that's your jam.
 
 ### Carthage
 ```
@@ -94,18 +93,19 @@ func startVoucherServer() {
 
 ## Recommendations
 
-### Tokens
-Voucher works best if you pass an **OAuth** token, or better yet, generate some kind of a *single-use token* on your server, and pass that to tvOS. [Cluster](https://cluster.co), for example, uses single-use tokens to do auto-login from web to iOS app. Check out this [Medium post](https://library.launchkit.io/how-ios-9-s-safari-view-controller-could-completely-change-your-app-s-onboarding-experience-2bcf2305137f?source=your-stories) that shows how I do it! The same model can apply for iOS to tvOS logins.
+### Use tokens, not passwords
+While you can send whatever data you like back to tvOS, you should you pass back an **OAuth** token, or better yet, generate some kind of a *single-use token* on your server and send that. [Cluster](https://cluster.co), for example, uses single-use tokens to do auto-login from web to iOS app. Check out this [Medium post](https://library.launchkit.io/how-ios-9-s-safari-view-controller-could-completely-change-your-app-s-onboarding-experience-2bcf2305137f?source=your-stories) that shows how I do it! The same model can apply for iOS to tvOS logins.
 
 ### Voucher shouldn't be the only login option
 In your login screen, you should still show the manual entry UI, but add messaging that if the user simply opens the iOS app they can login that way too.
 
-## To do / Things I'd Love Your Help With!
+## Todo / Things I'd Love Your Help With!
 * Encryption? Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
 
 * Maybe change the response to be not called `tokenData`, as it's an `NSData` object, so anything can be passed back.
 
 * Make Voucher Server work on `OS X`, and even `tvOS`! Would probably just need new framework targets, and additional test apps.
+
 
 ## Requirements
 * iOS 7.0 and above
