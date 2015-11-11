@@ -26,10 +26,8 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        let displayName = UIDevice.currentDevice().name
         let uniqueId = "VoucherTest";
-        self.client = VoucherClient(displayName: displayName, uniqueSharedId: uniqueId)
+        self.client = VoucherClient(uniqueSharedId: uniqueId)
         self.client?.delegate = self
     }
 

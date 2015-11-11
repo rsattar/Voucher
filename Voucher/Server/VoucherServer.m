@@ -9,6 +9,8 @@
 #import "VoucherServer.h"
 #import "VoucherCommon.h"
 
+#import <UIKit/UIKit.h> // Just needed for deviceName
+
 @interface VoucherServer () <NSNetServiceDelegate>
 
 @property (copy, nonatomic) NSString *displayName;
@@ -36,6 +38,12 @@
         self.serviceName = [NSString stringWithFormat:kVoucherServiceNameFormat, appString];
     }
     return self;
+}
+
+- (instancetype)initWithUniqueSharedId:(NSString *)uniqueSharedId
+{
+    NSString *deviceName = [UIDevice currentDevice].name;
+    return [self initWithDisplayName:deviceName uniqueSharedId:uniqueSharedId];
 }
 
 - (void)dealloc

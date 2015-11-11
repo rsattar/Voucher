@@ -32,6 +32,7 @@ typedef void (^VoucherServerRequestHandler)(NSString * _Nonnull displayName, Vou
 
 - (nullable instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName uniqueSharedId:(nonnull NSString *)uniqueSharedId NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithUniqueSharedId:(nonnull NSString *)uniqueSharedId;
 
 - (void)startAdvertisingWithRequestHandler:(nonnull VoucherServerRequestHandler)requestHandler;
 - (void)stop;

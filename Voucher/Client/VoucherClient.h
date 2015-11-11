@@ -31,6 +31,7 @@ typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable authData, NSS
 
 - (nullable instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithDisplayName:(nonnull NSString *)displayName uniqueSharedId:(nonnull NSString *)uniqueSharedId NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithUniqueSharedId:(nonnull NSString *)uniqueSharedId;
 
 - (void)startSearchingWithCompletion:(nonnull VoucherClientCompletionHandler)completionHandler;
 - (void)stop;
