@@ -28,22 +28,24 @@
 
 @implementation VoucherServer
 
-- (instancetype)initWithDisplayName:(NSString *)displayName uniqueSharedId:(NSString *)uniqueSharedId
+- (instancetype)initWithUniqueSharedId:(NSString *)uniqueSharedId displayName:(NSString *)displayName
 {
     self = [super init];
     if (self) {
-        self.displayName = displayName;
         self.uniqueSharedId = uniqueSharedId;
         NSString *appString = [self.uniqueSharedId stringByReplacingOccurrencesOfString:@"." withString:@"_"];
         self.serviceName = [NSString stringWithFormat:kVoucherServiceNameFormat, appString];
+        if (displayName.length == 0) {
+            displayName = [UIDevice currentDevice].name;
+        }
+        self.displayName = displayName;
     }
     return self;
 }
 
 - (instancetype)initWithUniqueSharedId:(NSString *)uniqueSharedId
 {
-    NSString *deviceName = [UIDevice currentDevice].name;
-    return [self initWithDisplayName:deviceName uniqueSharedId:uniqueSharedId];
+    return [self initWithUniqueSharedId:uniqueSharedId displayName:nil];
 }
 
 - (void)dealloc
