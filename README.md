@@ -1,6 +1,12 @@
 # Voucher
 
-Voucher is a simple Objective C library to make authenticating tvOS apps easy via their iOS counterparts using Bonjour.
+The new Apple TV is amazing but the keyboard input leaves a lot to be desired. Instead of making your users type credentials into their TV, you can use Voucher to let them easily sign into the TV app using your iOS app.
+
+### How Does It Work?
+
+Voucher uses [Bonjour](https://developer.apple.com/bonjour/), which is a technology to discover other devices on your network, and what they can do. When active, Voucher on tvOS starts looking in your local network for any Voucher Server, on iOS. 
+
+Once it finds a Voucher Server, it asks it for authentication. The iOS app can then show a notification to the user. If the user accepts, then the iOS app can send some authentication data back to the tvOS app (an OAuth token, etc.).
 
 
 ## Installation
@@ -26,7 +32,7 @@ pod 'Voucher'
 
 In your tvOS app, when the user wants to authenticate, you should create a `VoucherClient` instance and start it:
 
-### tvOS (requesting auth)
+### tvOS (Requesting Auth)
 When the user triggers a "Login" button, your app should display some UI instructing them to open their iOS App to finish logging in, and then start the voucher client, like below:
 
 ```swift
@@ -51,7 +57,7 @@ func startVoucherClient() {
 ```
 
 
-### iOS (has auth)
+### iOS (Providing Auth)
 If your iOS app has auth credentials, it should start a Voucher Server, so it can answer any requests for a login. I'd recommend starting the server when (and if) the user is logged in.
 
 ```swift
@@ -83,23 +89,26 @@ func startVoucherServer() {
 
 ## Recommendations
 
-Voucher works best if you pass an **OAuth** token, or better yet, generate some kind of a *single-use token* on your server, and pass that to tvOS. [Cluster](https://cluster.co), for example, uses single-use tokens to do auto-login from web to iOS app. Check out this [Medium post](https://library.launchkit.io/how-ios-9-s-safari-view-controller-could-completely-change-your-app-s-onboarding-experience-2bcf2305137f?source=your-stories) that shows how I do it!
+### Tokens
+Voucher works best if you pass an **OAuth** token, or better yet, generate some kind of a *single-use token* on your server, and pass that to tvOS. [Cluster](https://cluster.co), for example, uses single-use tokens to do auto-login from web to iOS app. Check out this [Medium post](https://library.launchkit.io/how-ios-9-s-safari-view-controller-could-completely-change-your-app-s-onboarding-experience-2bcf2305137f?source=your-stories) that shows how I do it! The same model can apply for iOS to tvOS logins.
+
+### Voucher shouldn't be the only login option
+In your login screen, you should still show the manual entry UI, but add messaging that if the user simply opens the iOS app they can login that way too.
 
 ## To do / Things I'd Love Your Help With!
-* Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
-	* Is there an easy way to encrypt the communication?
-	* Is that even necessary?
+* Encryption? Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
 
 * Maybe change the response to be not called `tokenData`, as it's an `NSData` object, so anything can be passed back. 
 
 * Future proofing: Add versioning to the socket protocol. Currently only the content-length preamble and an `NSDictionary` (serialized as `NSData`) is sent back and forth.
+
+* Make Voucher Server work on `OS X`, and even `tvOS`! Would probably just need new framework targets, and additional test apps.
 
 ## Requirements
 * iOS 7.0 and above
 * tvOS 9.0
 * Xcode 7
 
-## Feedback
 
 ## License
 `Voucher` is available using an MIT license. See the LICENSE file for more info.
