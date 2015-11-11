@@ -1,5 +1,5 @@
 //
-//  HauteStreamsController.h
+//  VoucherStreamsController.h
 //  Voucher
 //
 //  Created by Rizwan Sattar on 11/7/15.
