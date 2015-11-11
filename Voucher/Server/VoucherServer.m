@@ -206,7 +206,7 @@
     // we were
 #pragma unused(sender)
     NSNetServicesError errorCode = [errorDict[NSNetServicesErrorCode] integerValue];
-    NSLog(@"Voucher Server stopped publishing, due to error: %ld", errorCode);
+    NSLog(@"Voucher Server stopped publishing, due to error: %ld", (long)errorCode);
     if (errorCode == NSNetServicesUnknownError) {
         if (self.shouldBeAdvertising) {
             NSLog(@"Restarting Voucher Server...");
