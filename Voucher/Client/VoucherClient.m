@@ -149,10 +149,10 @@
 {
     [super handleReceivedData:data];
     NSDictionary *responseDict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSData *tokenData = responseDict[@"tokenData"];
+    NSData *authData = responseDict[@"authData"];
     NSString *responderDisplayName = responseDict[@"displayName"];
     if (self.completionHandler) {
-        self.completionHandler(tokenData, responderDisplayName, nil);
+        self.completionHandler(authData, responderDisplayName, nil);
     }
     [self stop];
 }

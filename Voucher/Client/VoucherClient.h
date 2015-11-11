@@ -19,7 +19,7 @@
 @end
 
 
-typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable tokenData, NSString * _Nullable responderDisplayName, NSError * _Nullable error);
+typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable authData, NSString * _Nullable responderDisplayName, NSError * _Nullable error);
 
 @interface VoucherClient : VoucherStreamsController
 

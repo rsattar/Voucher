@@ -37,13 +37,13 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         super.viewWillAppear(animated)
 
 
-        self.client?.startSearchingWithCompletion { [unowned self] (tokenData, displayName, error) -> Void in
+        self.client?.startSearchingWithCompletion { [unowned self] (authData, displayName, error) -> Void in
 
             defer {
                 self.client?.stop()
             }
 
-            guard let tokenData = tokenData, let displayName = displayName else {
+            guard let authData = authData, let displayName = displayName else {
                 if let error = error {
                     NSLog("Encountered error retrieving data: \(error)")
                 }
@@ -51,7 +51,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
                 return
             }
 
-            self.onTokenDataReceived(tokenData, responderName: displayName)
+            self.onAuthDataReceived(authData, responderName: displayName)
             
         }
     }
@@ -69,9 +69,10 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
-    func onTokenDataReceived(tokenData: NSData, responderName:String) {
-        let tokenString = String(data: tokenData, encoding: NSUTF8StringEncoding)!
-        let alert = UIAlertController(title: "Received Token!", message: "Received token, '\(tokenString)' from '\(responderName)'", preferredStyle: .Alert)
+    func onAuthDataReceived(authData: NSData, responderName:String) {
+        // Treat the auth data as an string-based auth token
+        let tokenString = String(data: authData, encoding: NSUTF8StringEncoding)!
+        let alert = UIAlertController(title: "Received Auth Data!", message: "Received data, '\(tokenString)' from '\(responderName)'", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { [unowned self] action in
             self.delegate?.authController(self, didSucceed: true)
             }))

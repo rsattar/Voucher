@@ -18,7 +18,7 @@
 @end
 
 
-typedef void (^VoucherServerResponseHandler)(NSData * _Nullable tokenData, NSError * _Nullable error);
+typedef void (^VoucherServerResponseHandler)(NSData * _Nullable authData, NSError * _Nullable error);
 typedef void (^VoucherServerRequestHandler)(NSString * _Nonnull displayName, VoucherServerResponseHandler _Nonnull responseHandler);
 
 @interface VoucherServer : VoucherStreamsController

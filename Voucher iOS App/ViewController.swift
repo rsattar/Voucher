@@ -46,8 +46,9 @@ class ViewController: UIViewController, VoucherServerDelegate {
             }))
 
             alertController.addAction(UIAlertAction(title: "Allow", style: .Default, handler: { action in
-                let tokenData = "THIS IS AN AUTH TOKEN".dataUsingEncoding(NSUTF8StringEncoding)!
-                responseHandler(tokenData, nil)
+                // For our authData, use a token string (to simulate an OAuth token, for example)
+                let authData = "THIS IS AN AUTH TOKEN".dataUsingEncoding(NSUTF8StringEncoding)!
+                responseHandler(authData, nil)
             }))
 
             self.presentViewController(alertController, animated: true, completion: nil)

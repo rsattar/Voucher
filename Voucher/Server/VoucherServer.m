@@ -117,14 +117,14 @@
     NSString *displayName = requestDict[@"displayName"];
     if (self.requestHandler) {
         __weak VoucherServer *_weakSelf = self;
-        self.requestHandler(displayName, ^(NSData * tokenData, NSError * error) {
+        self.requestHandler(displayName, ^(NSData * authData, NSError * error) {
 
             NSAssert(error == nil, @"Error handling not yet implemented");
 
             NSDictionary *responseDict = nil;
-            if (tokenData.length) {
+            if (authData.length) {
                 // App has granted us some data
-                responseDict = @{@"tokenData" : tokenData, @"displayName" : _weakSelf.displayName};
+                responseDict = @{@"authData" : authData, @"displayName" : _weakSelf.displayName};
             } else {
                 // Don't send back any response data, except our display name
                 responseDict = @{@"displayName" : _weakSelf.displayName};
