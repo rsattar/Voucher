@@ -102,8 +102,6 @@ In your login screen, you must still show the manual entry UI according to the [
 ## Todo / Things I'd Love Your Help With!
 * Encryption? Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
 
-* Maybe change the response to be not called `tokenData`, as it's an `NSData` object, so anything can be passed back.
-
 * Make Voucher Server work on `OS X`, and even `tvOS`! Would probably just need new framework targets, and additional test apps.
 
 
