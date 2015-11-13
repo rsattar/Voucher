@@ -4,7 +4,7 @@ The new Apple TV is amazing but the keyboard input leaves a lot to be desired. I
 
 ### How Does It Work?
 
-Voucher uses [Bonjour](https://developer.apple.com/bonjour/), which is a technology to discover other devices on your network, and what they can do. When active, Voucher on tvOS starts looking in your local network for any Voucher Server, on iOS. 
+Voucher uses [Bonjour](https://developer.apple.com/bonjour/), which is a technology to discover other devices on your network, and what they can do. When active, Voucher on tvOS starts looking in your local network and over [AWDL (Apple Wireless Direct Link)](http://stackoverflow.com/questions/19587701/what-is-awdl-apple-wireless-direct-link-and-how-does-it-work) for any Voucher Server, on iOS. 
 
 Once it finds a Voucher Server, it asks it for authentication. Here's the demo app:
 <p align="center"><img src="http://cl.ly/image/0H1p2p3i281H/Screen%20Shot%202015-11-11%20at%2011.14.46%20AM.png" width="600" alt="Sample tvOS App"/></p>
