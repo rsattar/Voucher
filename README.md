@@ -48,11 +48,12 @@ func startVoucherClient() {
     let uniqueId = "SomethingUnique";
     self.voucher = VoucherClient(uniqueSharedId: uniqueId)
     
-    self.voucher.startSearchingWithCompletion { [unowned self] tokenData, displayName, error in
+    self.voucher.startSearchingWithCompletion { [unowned self] authData, displayName, error in
 
-        if tokenData != nil {
+        // (authData is of type NSData)
+        if authData != nil {
             // User granted permission on iOS app!
-            self.authenticationSucceeded(tokenData!, from: displayName)
+            self.authenticationSucceeded(authData!, from: displayName)
         } else {
             self.authenticationFailed()
         }
@@ -80,8 +81,8 @@ func startVoucherServer() {
         }))
 
         alertController.addAction(UIAlertAction(title: "Allow", style: .Default, handler: { action in
-            let tokenData = "THIS IS AN AUTH TOKEN".dataUsingEncoding(NSUTF8StringEncoding)!
-            responseHandler(tokenData, nil)
+            let authData = "THIS IS AN AUTH TOKEN".dataUsingEncoding(NSUTF8StringEncoding)!
+            responseHandler(authData, nil)
         }))
 
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -103,6 +104,9 @@ In your login screen, you must still show the manual entry UI according to the [
 * Encryption? Currently Voucher *does not* encrypt any data between the server and the client, so I suppose if someone wanted your credentials (See **Recommendations** section above), they could have a packet sniffer on your local network and access your credentials.
 
 * Make Voucher Server work on `OS X`, and even `tvOS`! Would probably just need new framework targets, and additional test apps.
+
+## Further Reading
+Check out Benny Wong's post on why Apple TV sign in sucks. He also has a demo project, which you should check out!
 
 
 ## Requirements
