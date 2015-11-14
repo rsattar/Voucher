@@ -117,3 +117,6 @@ Check out [Benny Wong](https://github.com/bdotdub)'s post on [why Apple TV sign 
 
 ## License
 `Voucher` is available using an MIT license. See the LICENSE file for more info.
+
+## I'd Love to Know If You'r Using Voucher!
+[Post to this Github "issue" I made to help us track who's using Voucher](https://github.com/rsattar/Voucher/issues/2) :+1:
