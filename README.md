@@ -106,7 +106,7 @@ In your login screen, you must still show the manual entry UI according to the [
 * Make Voucher Server work on `OS X`, and even `tvOS`! Would probably just need new framework targets, and additional test apps.
 
 ## Further Reading
-Check out Benny Wong's post on why Apple TV sign in sucks. He also has a demo project, which you should check out!
+Check out [Benny Wong](https://github.com/bdotdub)'s post on [why Apple TV sign in sucks](https://medium.com/@bdotdub/signing-into-apps-on-apple-tv-sucks-d36fd00e6712). He also has a [demo tvOS Authing project](https://github.com/bdotdub/TriplePlay), which you should check out!
 
 
 ## Requirements
