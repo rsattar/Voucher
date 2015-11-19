@@ -17,7 +17,7 @@ If the user accepts, then the iOS app can send some authentication data back to 
 
 ## Installation
 
-Voucher is available through [Carthage](https://github.com/Carthage/Carthage) and [Cocoapods](https://cocoapods.org). You can also manually install it, if that's your jam.
+Voucher is available through [Carthage](https://github.com/Carthage/Carthage) and [CocoaPods](https://cocoapods.org). You can also manually install it, if that's your jam.
 
 ### Carthage
 ```
