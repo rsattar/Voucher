@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/rizzledizzle"
 
   s.platform     = ['ios', 'tvos']
-  s.ios.deployment_target = "8.0"
+  s.ios.deployment_target = "7.0"
   s.tvos.deployment_target = "9.0"
 
   s.source       = { :git => "https://github.com/rsattar/Voucher.git", :tag => s.version.to_s }
