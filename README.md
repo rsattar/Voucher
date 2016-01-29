@@ -9,7 +9,7 @@ Voucher uses [Bonjour](https://developer.apple.com/bonjour/), which is a technol
 Once it finds a Voucher Server, it asks it for authentication. Here's the demo app:
 <p align="center"><img src="http://cl.ly/image/0H1p2p3i281H/Screen%20Shot%202015-11-11%20at%2011.14.46%20AM.png" width="600" alt="Sample tvOS App"/></p>
 
-The demo iOS app can then show a notification to the user (you can show whatever UI you want):
+The demo iOS app can then show a notification to the user (you can show whatever UI you want, or even no UI):
 <p align="center"><img src="http://cl.ly/image/3d0L3P310C3w/IMG_0636.PNG" width="320" alt="iOS app shows a dialog"/></p>
 
 If the user accepts, then the iOS app can send some authentication data back to the tvOS app (in this case, an auth token string)
@@ -118,5 +118,5 @@ Check out [Benny Wong](https://github.com/bdotdub)'s post on [why Apple TV sign 
 ## License
 `Voucher` is available using an MIT license. See the LICENSE file for more info.
 
-## I'd Love to Know If You'r Using Voucher!
+## I'd Love to Know If You're Using Voucher!
 [Post to this Github "issue" I made to help us track who's using Voucher](https://github.com/rsattar/Voucher/issues/2) :+1:
