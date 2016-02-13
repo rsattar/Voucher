@@ -24,7 +24,7 @@ Voucher is available through [Carthage](https://github.com/Carthage/Carthage) an
 github "rsattar/Voucher"
 ```
 
-### Cocoapods
+### CocoaPods
 ```
 pod 'Voucher'
 ```
