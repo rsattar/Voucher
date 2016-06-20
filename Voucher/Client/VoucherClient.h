@@ -23,7 +23,7 @@ typedef void (^VoucherClientCompletionHandler)( NSData * _Nullable authData, NSS
 
 @interface VoucherClient : VoucherStreamsController
 
-@property (weak, nonatomic) NSObject <VoucherClientDelegate> *delegate;
+@property (weak, nonatomic, nullable) NSObject <VoucherClientDelegate> *delegate;
 
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
 @property (readonly, copy, nonatomic, nonnull) NSString *uniqueSharedId;
