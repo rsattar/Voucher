@@ -112,7 +112,7 @@ Check out [Benny Wong](https://github.com/bdotdub)'s post on [why Apple TV sign 
 ## Requirements
 * iOS 7.0 and above
 * tvOS 9.0
-* Xcode 7
+* Xcode 8
 
 
 ## License
