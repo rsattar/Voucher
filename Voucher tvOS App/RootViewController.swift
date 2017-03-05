@@ -12,8 +12,8 @@ class RootViewController: UIViewController, AuthViewControllerDelegate {
 
     var isAuthenticated: Bool = false {
         didSet {
-            self.authenticationUI.hidden = self.isAuthenticated
-            self.clearAuthenticationButton.hidden = !self.isAuthenticated
+            self.authenticationUI.isHidden = self.isAuthenticated
+            self.clearAuthenticationButton.isHidden = !self.isAuthenticated
             if (isAuthenticated) {
                 self.authenticationLabel.text = "Authenticated!"
             } else {
@@ -42,7 +42,7 @@ class RootViewController: UIViewController, AuthViewControllerDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         guard let segueIdentifier = segue.identifier else {
@@ -50,19 +50,19 @@ class RootViewController: UIViewController, AuthViewControllerDelegate {
         }
 
         if segueIdentifier == "showVoucher" {
-            let viewController = segue.destinationViewController as! AuthViewController
+            let viewController = segue.destination as! AuthViewController
             viewController.delegate = self
 
         }
     }
 
-    @IBAction func onClearDataTriggered(sender: UIButton) {
+    @IBAction func onClearDataTriggered(_ sender: UIButton) {
         self.isAuthenticated = false
     }
 
     // MARK: - AuthViewControllerDelegate
-    func authController(controller: AuthViewController, didSucceed succeeded: Bool) {
+    func authController(_ controller: AuthViewController, didSucceed succeeded: Bool) {
         self.isAuthenticated = succeeded
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }

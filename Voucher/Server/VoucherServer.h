@@ -23,14 +23,14 @@ typedef void (^VoucherServerRequestHandler)(NSString * _Nonnull displayName, Vou
 
 @interface VoucherServer : VoucherStreamsController
 
-@property (weak, nonatomic) NSObject <VoucherServerDelegate> *delegate;
+@property (weak, nonatomic, nullable) NSObject <VoucherServerDelegate> *delegate;
 
 @property (readonly, copy, nonatomic, nonnull) NSString *displayName;
 @property (readonly, copy, nonatomic, nonnull) NSString *uniqueSharedId;
 @property (readonly, assign, nonatomic) BOOL isAdvertising;
 @property (readonly, assign, nonatomic) BOOL isConnectedToClient;
 
-- (nullable instancetype)init NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithUniqueSharedId:(nonnull NSString *)uniqueSharedId displayName:(nullable NSString *)displayName NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithUniqueSharedId:(nonnull NSString *)uniqueSharedId;
 

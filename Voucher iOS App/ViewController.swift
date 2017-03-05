@@ -34,28 +34,28 @@ class ViewController: UIViewController, VoucherServerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.server?.startAdvertisingWithRequestHandler { (displayName, responseHandler) -> Void in
+        self.server?.startAdvertising { (displayName, responseHandler) -> Void in
 
-            let alertController = UIAlertController(title: "Allow Auth?", message: "Allow \"\(displayName)\" access to your login?", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Not Now", style: .Cancel, handler: { action in
+            let alertController = UIAlertController(title: "Allow Auth?", message: "Allow \"\(displayName)\" access to your login?", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Not Now", style: .cancel, handler: { action in
                 responseHandler(nil, nil)
             }))
 
-            alertController.addAction(UIAlertAction(title: "Allow", style: .Default, handler: { action in
+            alertController.addAction(UIAlertAction(title: "Allow", style: .default, handler: { action in
                 // For our authData, use a token string (to simulate an OAuth token, for example)
-                let authData = "THIS IS AN AUTH TOKEN".dataUsingEncoding(NSUTF8StringEncoding)!
+                let authData = "THIS IS AN AUTH TOKEN".data(using: String.Encoding.utf8)!
                 responseHandler(authData, nil)
             }))
 
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         self.server?.stop()
@@ -63,16 +63,16 @@ class ViewController: UIViewController, VoucherServerDelegate {
 
     // MARK: - VoucherServerDelegate
 
-    func voucherServer(server: VoucherServer, didUpdateAdvertising isAdvertising: Bool) {
+    func voucherServer(_ server: VoucherServer, didUpdateAdvertising isAdvertising: Bool) {
         var text = "❌ Server Offline."
         if (isAdvertising) {
             text = "✅ Server Online."
         }
         self.serverStatusLabel.text = text
-        self.connectionStatusLabel.hidden = !isAdvertising
+        self.connectionStatusLabel.isHidden = !isAdvertising
     }
 
-    func voucherServer(server: VoucherServer, didUpdateConnectionToClient isConnectedToClient: Bool) {
+    func voucherServer(_ server: VoucherServer, didUpdateConnectionToClient isConnectedToClient: Bool) {
         var text = "📡 Waiting for Connection..."
         if (isConnectedToClient) {
             text = "✅ Connected."

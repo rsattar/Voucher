@@ -31,11 +31,11 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         self.client?.delegate = self
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
 
-        self.client?.startSearchingWithCompletion { [unowned self] (authData, displayName, error) -> Void in
+        self.client?.startSearching { [unowned self] (authData, displayName, error) -> Void in
 
             defer {
                 self.client?.stop()
@@ -45,7 +45,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
                 if let error = error {
                     NSLog("Encountered error retrieving data: \(error)")
                 }
-                self.onNoDataReceived(error)
+                self.onNoDataReceived(error as NSError?)
                 return
             }
 
@@ -54,27 +54,27 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         }
     }
 
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.client?.stop()
     }
 
-    func onNoDataReceived(error: NSError?) {
-        let alert = UIAlertController(title: "Authentication Failed", message: "The iOS App denied our authentication request.", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Bummer!", style: .Default, handler: { [unowned self] action in
+    func onNoDataReceived(_ error: NSError?) {
+        let alert = UIAlertController(title: "Authentication Failed", message: "The iOS App denied our authentication request.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Bummer!", style: .default, handler: { [unowned self] action in
             self.delegate?.authController(self, didSucceed: false)
             }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func onAuthDataReceived(authData: NSData, responderName:String) {
+    func onAuthDataReceived(_ authData: Data, responderName:String) {
         // Treat the auth data as an string-based auth token
-        let tokenString = String(data: authData, encoding: NSUTF8StringEncoding)!
-        let alert = UIAlertController(title: "Received Auth Data!", message: "Received data, '\(tokenString)' from '\(responderName)'", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { [unowned self] action in
+        let tokenString = String(data: authData, encoding: String.Encoding.utf8)!
+        let alert = UIAlertController(title: "Received Auth Data!", message: "Received data, '\(tokenString)' from '\(responderName)'", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Awesome!", style: .default, handler: { [unowned self] action in
             self.delegate?.authController(self, didSucceed: true)
             }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +84,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
 
     // MARK: - VoucherClientDelegate
 
-    func voucherClient(client: VoucherClient, didUpdateSearching isSearching: Bool) {
+    func voucherClient(_ client: VoucherClient, didUpdateSearching isSearching: Bool) {
         if isSearching {
             self.searchingLabel.text = "📡 Searching for Voucher Servers..."
         } else {
@@ -92,7 +92,7 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
         }
     }
 
-    func voucherClient(client: VoucherClient, didUpdateConnectionToServer isConnectedToServer: Bool, serverName: String?) {
+    func voucherClient(_ client: VoucherClient, didUpdateConnectionToServer isConnectedToServer: Bool, serverName: String?) {
         if isConnectedToServer {
             self.connectionLabel.text = "✅ Connected to '\(serverName!)'"
         } else {
@@ -102,6 +102,6 @@ class AuthViewController: UIViewController, VoucherClientDelegate {
 }
 
 protocol AuthViewControllerDelegate {
-    func authController(controller:AuthViewController, didSucceed succeeded:Bool)
+    func authController(_ controller:AuthViewController, didSucceed succeeded:Bool)
 }
 
